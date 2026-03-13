@@ -1184,6 +1184,13 @@
       display: grid;
       gap: 12px;
     }
+    .roadmap-header {
+      margin: 18px 0 6px;
+      align-items: start;
+    }
+    .roadmap-controls {
+      align-items: flex-start;
+    }
     .roadmap-card {
       padding: 20px;
       border-radius: 22px;
@@ -1746,6 +1753,18 @@
             <div class="section-label">Evidence roadmap</div>
             <h3>The next capture targets are now part of the product, not just a repo note</h3>
             <p>This ledger translates the research memo into a visible sourcing roadmap: what claim needs better proof, what kind of document would actually improve the chronicle, and how that capture would change the reading experience.</p>
+            <div class="source-explorer-header roadmap-header">
+              <div>
+                <h3>Filter the open evidence work by urgency, status, and chapter</h3>
+                <p>This keeps the chronicle honest: readers can see which missing documents are true blockers for stronger narrative confidence and which are later enrichment passes.</p>
+              </div>
+              <div class="source-controls roadmap-controls">
+                <div class="source-filter-group" id="roadmapPriorityFilters"></div>
+                <div class="source-filter-group" id="roadmapStatusFilters"></div>
+                <div class="source-filter-group" id="roadmapChapterFilters"></div>
+              </div>
+            </div>
+            <div class="source-active-state" id="roadmapActiveState"></div>
             <div class="roadmap-wrap" id="sourceRoadmap"></div>
           </section>
         </div>
@@ -2254,65 +2273,152 @@
 
     function renderSourceRoadmap(roadmap, chaptersById, sourcesById) {
       const root = document.getElementById('sourceRoadmap');
+      const priorityRoot = document.getElementById('roadmapPriorityFilters');
+      const statusRoot = document.getElementById('roadmapStatusFilters');
+      const chapterRoot = document.getElementById('roadmapChapterFilters');
+      const activeRoot = document.getElementById('roadmapActiveState');
       if (!root) return;
 
-      roadmap.forEach((entry) => {
-        const chapter = chaptersById.get(entry.chapterId);
-        const card = make('article', 'roadmap-card');
-        const topline = make('div', 'roadmap-topline');
-
-        const priority = make('span', 'roadmap-source-pill', `${entry.priority} priority`);
-        priority.dataset.tone = roadmapTone(entry);
-        topline.append(priority);
-
-        const status = make('span', 'roadmap-source-pill', entry.status);
-        status.dataset.tone = roadmapTone(entry);
-        topline.append(status);
-
-        if (chapter) {
-          const chapterPill = make('span', 'roadmap-source-pill', `${chapter.phase} · ${chapter.range}`);
-          topline.append(chapterPill);
+      const filters = { priority: 'all', status: 'all', chapter: 'all' };
+      const filterSets = [
+        {
+          root: priorityRoot,
+          label: 'Priority',
+          key: 'priority',
+          options: [['all', 'All priorities'], ['High', 'High'], ['Medium', 'Medium']]
+        },
+        {
+          root: statusRoot,
+          label: 'Status',
+          key: 'status',
+          options: [['all', 'All status'], ['Open', 'Open'], ['Queued', 'Queued']]
+        },
+        {
+          root: chapterRoot,
+          label: 'Chapter',
+          key: 'chapter',
+          options: [['all', 'All chapters'], ...Array.from(new Set(roadmap.map((entry) => entry.chapterId))).map((chapterId) => {
+            const chapter = chaptersById.get(chapterId);
+            return [chapterId, chapter ? chapter.phase : chapterId];
+          })]
         }
+      ];
 
-        card.append(topline);
-        card.append(make('h3', '', entry.title));
-        card.append(make('p', '', entry.claim));
+      function renderActiveState() {
+        if (!activeRoot) return;
+        activeRoot.innerHTML = '';
+        const items = [];
+        if (filters.priority !== 'all') items.push(`Priority: ${filters.priority}`);
+        if (filters.status !== 'all') items.push(`Status: ${filters.status}`);
+        if (filters.chapter !== 'all') items.push(`Chapter: ${chaptersById.get(filters.chapter)?.phase || filters.chapter}`);
+        items.forEach((label) => activeRoot.append(make('span', 'source-active-chip', label)));
+      }
 
-        const grid = make('div', 'roadmap-grid');
-        [
-          ['Wanted evidence', entry.desiredEvidence],
-          ['Why it matters', entry.whyItMatters],
-          ['Target effect', entry.targetEffect]
-        ].forEach(([label, text]) => {
-          const metric = make('div', 'roadmap-metric');
-          metric.append(make('strong', '', label));
-          metric.append(make('span', '', text));
-          grid.append(metric);
+      function draw() {
+        root.innerHTML = '';
+        renderActiveState();
+        const filtered = roadmap.filter((entry) => {
+          const matchesPriority = filters.priority === 'all' || entry.priority === filters.priority;
+          const matchesStatus = filters.status === 'all' || entry.status === filters.status;
+          const matchesChapter = filters.chapter === 'all' || entry.chapterId === filters.chapter;
+          return matchesPriority && matchesStatus && matchesChapter;
         });
-        card.append(grid);
 
-        if (entry.notes) {
-          const notes = make('p', 'archive-note', entry.notes);
-          notes.style.marginTop = '14px';
-          card.append(notes);
+        if (!filtered.length) {
+          root.append(make('div', 'source-empty', 'No roadmap entries match this filter combination yet.'));
+          return;
         }
 
-        if ((entry.currentAnchors || []).length) {
-          const sourceRow = make('div', 'roadmap-source-row');
-          entry.currentAnchors.forEach((sourceId) => {
-            const source = sourcesById.get(sourceId);
-            if (!source) return;
-            const pill = make('a', 'roadmap-source-pill', source.label);
-            pill.href = source.url;
-            pill.target = source.url.startsWith('http') ? '_blank' : '_self';
-            if (pill.target === '_blank') pill.rel = 'noreferrer';
-            sourceRow.append(pill);
+        filtered.forEach((entry) => {
+          const chapter = chaptersById.get(entry.chapterId);
+          const card = make('article', 'roadmap-card');
+          card.id = `roadmap-${entry.id}`;
+          const topline = make('div', 'roadmap-topline');
+
+          const priority = make('span', 'roadmap-source-pill', `${entry.priority} priority`);
+          priority.dataset.tone = roadmapTone(entry);
+          topline.append(priority);
+
+          const status = make('span', 'roadmap-source-pill', entry.status);
+          status.dataset.tone = roadmapTone(entry);
+          topline.append(status);
+
+          if (chapter) {
+            const chapterPill = make('button', 'roadmap-source-pill', `${chapter.phase} · ${chapter.range}`);
+            chapterPill.type = 'button';
+            chapterPill.addEventListener('click', () => {
+              announceChapterFocus(chapter.id, { scrollSources: true });
+            });
+            topline.append(chapterPill);
+          }
+
+          card.append(topline);
+          card.append(make('h3', '', entry.title));
+          card.append(make('p', '', entry.claim));
+
+          const grid = make('div', 'roadmap-grid');
+          [
+            ['Wanted evidence', entry.desiredEvidence],
+            ['Why it matters', entry.whyItMatters],
+            ['Target effect', entry.targetEffect]
+          ].forEach(([label, text]) => {
+            const metric = make('div', 'roadmap-metric');
+            metric.append(make('strong', '', label));
+            metric.append(make('span', '', text));
+            grid.append(metric);
           });
-          card.append(sourceRow);
-        }
+          card.append(grid);
 
-        root.append(card);
+          if (entry.notes) {
+            const notes = make('p', 'archive-note', entry.notes);
+            notes.style.marginTop = '14px';
+            card.append(notes);
+          }
+
+          if ((entry.currentAnchors || []).length) {
+            const sourceRow = make('div', 'roadmap-source-row');
+            entry.currentAnchors.forEach((sourceId) => {
+              const source = sourcesById.get(sourceId);
+              if (!source) return;
+              const pill = make('a', 'roadmap-source-pill', source.label);
+              pill.href = source.url;
+              pill.target = source.url.startsWith('http') ? '_blank' : '_self';
+              if (pill.target === '_blank') pill.rel = 'noreferrer';
+              sourceRow.append(pill);
+            });
+            card.append(sourceRow);
+          }
+
+          root.append(card);
+        });
+      }
+
+      function syncFilterButtons() {
+        filterSets.forEach(({ root, key }) => {
+          root?.querySelectorAll('.source-filter-chip').forEach((chip) => {
+            chip.classList.toggle('active', chip.dataset.value === filters[key]);
+          });
+        });
+      }
+
+      filterSets.forEach(({ root, label, key, options }) => {
+        if (!root) return;
+        root.innerHTML = '';
+        root.append(make('span', 'source-filter-label', label));
+        options.forEach(([value, text], index) => {
+          const button = make('button', `source-filter-chip${index === 0 ? ' active' : ''}`, text);
+          button.type = 'button';
+          button.dataset.value = value;
+          button.addEventListener('click', () => {
+            filters[key] = value;
+            syncFilterButtons();
+            draw();
+          });
+          root.append(button);
+        });
       });
+
+      draw();
     }
 
     function sourceSupportTone(source) {
@@ -2366,7 +2472,7 @@
       }));
     }
 
-    function renderSources(sources, chapters, chaptersById, eventsByChapterId, artifactsByChapterId) {
+    function renderSources(sources, chapters, chaptersById, eventsByChapterId, artifactsByChapterId, roadmap = []) {
       const root = document.getElementById('sourcesList');
       const originRoot = document.getElementById('sourceOriginFilters');
       const evidenceRoot = document.getElementById('sourceEvidenceFilters');
@@ -2374,6 +2480,14 @@
       const chapterRoot = document.getElementById('sourceChapterFilters');
       const activeRoot = document.getElementById('sourceActiveState');
       if (!root) return;
+
+      const roadmapByAnchor = new Map();
+      roadmap.forEach((entry) => {
+        (entry.currentAnchors || []).forEach((sourceId) => {
+          if (!roadmapByAnchor.has(sourceId)) roadmapByAnchor.set(sourceId, []);
+          roadmapByAnchor.get(sourceId).push(entry);
+        });
+      });
 
       const supportMap = buildSourceSupportMap(sources, chapters, eventsByChapterId, artifactsByChapterId);
       const filters = { origin: 'all', evidence: 'all', verification: 'all', chapter: 'all' };
@@ -2497,6 +2611,25 @@
           }
 
           copy.append(supportBox);
+
+          const roadmapEntries = roadmapByAnchor.get(source.id) || [];
+          if (roadmapEntries.length) {
+            const roadmapBox = make('div', 'source-support');
+            roadmapBox.append(make('div', 'source-support-title', `Still carrying ${roadmapEntries.length} roadmap target${roadmapEntries.length === 1 ? '' : 's'} for stronger proof`));
+            const row = make('div', 'source-support-row');
+            roadmapEntries.forEach((entry) => {
+              const button = make('button', 'source-support-chip', entry.title);
+              button.type = 'button';
+              button.dataset.tone = roadmapTone(entry) === 'high' ? 'primary' : 'context';
+              button.addEventListener('click', () => {
+                document.getElementById(`roadmap-${entry.id}`)?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+              });
+              row.append(button);
+            });
+            roadmapBox.append(row);
+            copy.append(roadmapBox);
+          }
+
           article.append(copy);
           const link = make('a', '', source.url.startsWith('http') ? 'Open source' : 'Open file');
           link.href = source.url;
@@ -3173,7 +3306,7 @@
       renderSourceSummary(sources);
       renderEvidenceAudit(chapters, sourcesById, eventsByChapterId, artifactsByChapterId);
       renderSourceRoadmap(sourceRoadmap, chaptersById, sourcesById);
-      renderSources(sources, chapters, chaptersById, eventsByChapterId, artifactsByChapterId);
+      renderSources(sources, chapters, chaptersById, eventsByChapterId, artifactsByChapterId, sourceRoadmap);
       activateScrollSync(chapters, setActiveLocation);
     }
 
