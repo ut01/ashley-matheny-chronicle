@@ -1,14 +1,107 @@
 [
   {
     "group": "Cloud & platform ecosystems",
-    "items": ["VMware", "AWS", "Microsoft Azure", "HPE Helion", "IBM"]
+    "summary": "The validation story is not a random badge wall. It shows Bloombase repeatedly entering the platforms where enterprise buyers actually evaluate deployment and interoperability.",
+    "metric": "2014-2019 - platform translation",
+    "items": [
+      {
+        "label": "Dell certification",
+        "year": "2014",
+        "sourceId": "vmware-2014",
+        "note": "Early dated proof that interoperability was being framed as a certification milestone, not just a product claim."
+      },
+      {
+        "label": "HPE Helion / ArcSight",
+        "year": "2015",
+        "sourceId": "hpe-2015",
+        "note": "Shows cloud and security-stack compatibility arriving together in the same chapter."
+      },
+      {
+        "label": "IBM security validation",
+        "year": "2017",
+        "sourceId": "ibm-2017",
+        "note": "A stronger maturity signal that the story remained legible beyond early alliance announcements."
+      },
+      {
+        "label": "VMware Cloud on AWS",
+        "year": "2018",
+        "sourceId": "vmware-aws-2018",
+        "note": "Evidence that Bloombase kept translating into newer cloud deployment surfaces."
+      },
+      {
+        "label": "Azure Marketplace",
+        "year": "2019",
+        "sourceId": "azure-2019",
+        "note": "Public-cloud distribution proof, not just classic enterprise partnership language."
+      }
+    ]
   },
   {
-    "group": "Security & HSM partners",
-    "items": ["HP Enterprise Secure Key Manager", "Thales", "nCipher", "Futurex", "Utimaco"]
+    "group": "Security & HSM trust layer",
+    "summary": "The strongest middle-years pattern is trust infrastructure: key management, HSM adjacency, and cryptographic ecosystems where novelty matters less than assurance.",
+    "metric": "2015-2025 - key custody and trust",
+    "items": [
+      {
+        "label": "HP Enterprise Secure Key Manager",
+        "year": "2015",
+        "sourceId": "hp-2015",
+        "note": "A practical interoperability signal in the key-management layer."
+      },
+      {
+        "label": "Thales ASAP alliance",
+        "year": "2015",
+        "sourceId": "thales-2015",
+        "note": "Places Bloombase inside a recognizable encryption and cloud-security ecosystem."
+      },
+      {
+        "label": "nCipher collaboration",
+        "year": "2019",
+        "sourceId": "ncipher-2019",
+        "note": "Extends the trust story into another security-hardware-aligned relationship."
+      },
+      {
+        "label": "Futurex partnership",
+        "year": "2020",
+        "sourceId": "futurex-2020",
+        "note": "Shows cryptographic trust expansion continuing into the next infrastructure cycle."
+      },
+      {
+        "label": "Utimaco alliance",
+        "year": "2025",
+        "sourceId": "utimaco-2025",
+        "note": "Reopens the same trust theme in explicitly AI-era language."
+      }
+    ]
   },
   {
-    "group": "Infrastructure credibility",
-    "items": ["Hitachi Vantara / HDS", "Bloombase StoreSafe", "NVIDIA", "ArcSight", "Enterprise data-at-rest security"]
+    "group": "Infrastructure credibility across eras",
+    "summary": "What matters editorially is the accumulation pattern: storage, virtualization, SIEM, cloud marketplaces, and accelerator-era framing all connect back to the same durability thesis.",
+    "metric": "2013-2025 - persistence across waves",
+    "items": [
+      {
+        "label": "OpenStack community",
+        "year": "2013",
+        "sourceId": "openstack-2013",
+        "note": "Earliest strong public proof that the company wanted to matter inside cloud infrastructure."
+      },
+      {
+        "label": "VMware alliance",
+        "year": "2013",
+        "sourceId": "vmware-2013",
+        "note": "A founding-year signal that virtualization-era trust was part of the thesis from the start."
+      },
+      {
+        "label": "Hitachi Data Systems",
+        "year": "2014",
+        "sourceId": "hitachi-2014",
+        "note": "Adds breadth across enterprise storage environments."
+      },
+      {
+        "label": "NVIDIA DPU / GPU security framing",
+        "year": "2023",
+        "sourceId": "nvidia-2023",
+        "note": "Shows the same core problem being reframed for accelerated computing rather than abandoned."
+      }
+    ]
   }
 ]

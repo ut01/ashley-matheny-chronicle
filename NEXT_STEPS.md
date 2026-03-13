@@ -33,9 +33,11 @@
   - chapter evidence matrix + open source gaps panel so sourcing strength is visible, not implied
 - founding chapter strengthened with dated 2013 release-trail treatment instead of a vague founding claim
 - richer founding-proof artifact cards added for the OpenStack and VMware 2013 releases, including direct-quote support in the artifact visual system
+- richer chapter-level artifact slots added for the strongest validation chapter items (Dell / Hitachi / IBM / Azure) so the middle years feel archival, not repetitive
+- validation wall upgraded from a generic grouped list into a source-backed ecosystem module with dated milestones, editorial notes, and direct links to primary evidence
 
 ## Next implementation steps
 1. Strengthen the source archive further by capturing more direct primary URLs for early academic details, especially anything tighter than the current profile-level CUHK / Beckman trail.
 2. Deepen the artifact system with real media slots for conference visuals, article snippets, and future scans only where source quality is strong enough.
-3. Add richer chapter-level artifact slots for the strongest validation chapter items (Dell / Hitachi / IBM / Azure) so the middle years feel archival, not repetitive.
+3. Add richer chapter-level artifact slots for the strongest AI-era and geography chapter items where source quality is already direct enough.
 4. Consider migrating the static prototype into Astro once the content model stabilizes.

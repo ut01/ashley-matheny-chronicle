@@ -653,12 +653,44 @@
 
     .validation-groups { display: grid; gap: 14px; }
     .validation-group {
-      padding: 18px; border-radius: 20px; background: rgba(255,255,255,.66); border: 1px solid rgba(25,50,79,.08);
+      padding: 18px; border-radius: 22px; background: rgba(255,255,255,.68); border: 1px solid rgba(25,50,79,.08);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.46);
     }
-    .validation-group h3 { margin: 0 0 10px; font-size: 15px; letter-spacing: .02em; }
-    .validation-items { display: flex; flex-wrap: wrap; gap: 8px; }
-    .validation-items span {
-      padding: 8px 10px; border-radius: 999px; background: rgba(25,50,79,.05); border: 1px solid rgba(25,50,79,.07); font-size: 12px; color: var(--accent);
+    .validation-group-head {
+      display: grid; gap: 10px; margin-bottom: 14px;
+    }
+    .validation-group-topline {
+      display: flex; justify-content: space-between; gap: 12px; align-items: center; flex-wrap: wrap;
+    }
+    .validation-group h3 { margin: 0; font-size: 16px; letter-spacing: .01em; }
+    .validation-metric {
+      display: inline-flex; align-items: center; gap: 8px; padding: 8px 10px; border-radius: 999px;
+      background: rgba(25,50,79,.06); border: 1px solid rgba(25,50,79,.08); font-size: 11px; letter-spacing: .12em;
+      text-transform: uppercase; color: var(--accent);
+    }
+    .validation-summary { margin: 0; color: var(--muted); line-height: 1.72; font-size: 14px; }
+    .validation-item-grid { display: grid; gap: 10px; }
+    .validation-item {
+      display: grid; gap: 8px; padding: 14px; border-radius: 18px; text-decoration: none;
+      background: rgba(247,243,236,.82); border: 1px solid rgba(25,50,79,.08); color: inherit;
+      transition: .18s ease;
+    }
+    .validation-item:hover {
+      transform: translateY(-1px); border-color: rgba(25,50,79,.14); background: rgba(255,255,255,.92);
+    }
+    .validation-item-topline {
+      display: flex; justify-content: space-between; gap: 10px; align-items: center; flex-wrap: wrap;
+    }
+    .validation-item strong { font-size: 14px; line-height: 1.45; }
+    .validation-year {
+      display: inline-flex; align-items: center; gap: 8px; padding: 6px 9px; border-radius: 999px;
+      background: rgba(180,138,90,.12); border: 1px solid rgba(180,138,90,.18); color: #6f532f;
+      font-size: 11px; letter-spacing: .12em; text-transform: uppercase;
+    }
+    .validation-note { margin: 0; color: var(--muted); line-height: 1.65; font-size: 13px; }
+    .validation-source {
+      display: inline-flex; align-items: center; gap: 8px; color: var(--accent-2);
+      font-size: 11px; letter-spacing: .12em; text-transform: uppercase;
     }
 
     .archive-wrap { margin-top: 34px; }
@@ -1517,13 +1549,39 @@
       });
     }
 
-    function renderValidation(groups) {
+    function renderValidation(groups, sourcesById) {
       const root = document.getElementById('validationGroups');
       groups.forEach((group) => {
         const section = make('section', 'validation-group');
-        section.append(make('h3', '', group.group));
-        const items = make('div', 'validation-items');
-        group.items.forEach((item) => items.append(make('span', '', item)));
+
+        const head = make('div', 'validation-group-head');
+        const topline = make('div', 'validation-group-topline');
+        topline.append(make('h3', '', group.group));
+        if (group.metric) topline.append(make('span', 'validation-metric', group.metric));
+        head.append(topline);
+        if (group.summary) head.append(make('p', 'validation-summary', group.summary));
+        section.append(head);
+
+        const items = make('div', 'validation-item-grid');
+        (group.items || []).forEach((item) => {
+          const source = sourcesById.get(item.sourceId);
+          const link = document.createElement('a');
+          link.className = 'validation-item';
+          link.href = source?.url || '#';
+          link.target = source?.url?.startsWith('http') ? '_blank' : '_self';
+          if (link.target === '_blank') link.rel = 'noreferrer';
+
+          const itemTopline = make('div', 'validation-item-topline');
+          itemTopline.append(make('strong', '', item.label));
+          if (item.year) itemTopline.append(make('span', 'validation-year', item.year));
+          link.append(itemTopline);
+
+          if (item.note) link.append(make('p', 'validation-note', item.note));
+          if (source) link.append(make('span', 'validation-source', source.label));
+
+          items.append(link);
+        });
+
         section.append(items);
         root.append(section);
       });
@@ -2276,7 +2334,7 @@
       renderChapters(chapters, sourcesById, artifactsByChapterId, taxonomyById, eventsByChapterId, archiveApi.openArchiveScope);
       renderMapNav(chapters, locationById, eventsByChapterId, sourcesById);
       const setActiveLocation = initializeMap(locations, chapters);
-      renderValidation(validationGroups);
+      renderValidation(validationGroups, sourcesById);
       renderPresentDirection(presentDirection, sourcesById);
       renderSourceSummary(sources);
       renderEvidenceAudit(chapters, sourcesById, eventsByChapterId, artifactsByChapterId);
