@@ -28,10 +28,11 @@
   - chapter-specific map captions, camera presets, and active route emphasis
   - present-direction / why-now module via `data/present-direction.json`
   - chapter-to-archive crosslinks with supporting milestone clusters and archive return links
+  - chapter-aware archive scoping so support clusters open filtered evidence sets in the reference timeline
+  - stronger editorial geography navigation cards with chapter tone, evidence counts, and source-backed cues
 
 ## Next implementation steps
 1. Strengthen the source archive further by capturing more direct primary URLs for early academic/founding details.
 2. Deepen the artifact system with real media slots for conference visuals, article snippets, and future scans only where source quality is strong enough.
-3. Add chapter thumbnails or stronger visual cues to the geography nav so skimming feels more editorial than utility-only.
-4. Add chapter-aware archive filtering so clicking a supporting cluster can temporarily scope the reference timeline to that chapter’s evidence set.
-5. Consider migrating the static prototype into Astro once the content model stabilizes.
+3. Add richer chapter-level artifact slots for the strongest early/founding chapters once source quality supports them.
+4. Consider migrating the static prototype into Astro once the content model stabilizes.

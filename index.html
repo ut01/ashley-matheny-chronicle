@@ -378,16 +378,26 @@
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
     .map-jump {
+      position: relative;
       display: grid;
-      gap: 8px;
-      padding: 14px;
+      gap: 12px;
+      padding: 0;
       border-radius: 18px;
       border: 1px solid rgba(25,50,79,.08);
       background: rgba(255,255,255,.72);
       color: var(--ink);
       text-align: left;
       cursor: pointer;
+      overflow: hidden;
       transition: .18s ease;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.5);
+    }
+    .map-jump::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,0));
+      pointer-events: none;
     }
     .map-jump:hover,
     .map-jump.active {
@@ -395,23 +405,113 @@
       border-color: rgba(25,50,79,.16);
       background: rgba(25,50,79,.08);
     }
+    .map-jump-visual {
+      position: relative;
+      min-height: 110px;
+      padding: 16px 16px 14px;
+      display: grid;
+      align-content: space-between;
+      gap: 10px;
+      background: linear-gradient(145deg, rgba(25,50,79,.92), rgba(45,95,115,.84));
+      color: #f8f3ea;
+      isolation: isolate;
+    }
+    .map-jump-visual::after {
+      content: "";
+      position: absolute;
+      inset: auto -10% -30% 35%;
+      height: 120px;
+      background: radial-gradient(circle, rgba(180,138,90,.34), rgba(180,138,90,0));
+      z-index: -1;
+    }
+    .map-jump[data-tone="formation"] .map-jump-visual {
+      background: linear-gradient(145deg, #234056, #486a77);
+    }
+    .map-jump[data-tone="research"] .map-jump-visual {
+      background: linear-gradient(145deg, #1f384f, #56707f);
+    }
+    .map-jump[data-tone="founder"] .map-jump-visual {
+      background: linear-gradient(145deg, #21324a, #5a4b6d);
+    }
+    .map-jump[data-tone="validation"] .map-jump-visual {
+      background: linear-gradient(145deg, #29405a, #726447);
+    }
+    .map-jump[data-tone="ai-era"] .map-jump-visual {
+      background: linear-gradient(145deg, #19263b, #37597a);
+    }
+    .map-jump-topline {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: center;
+    }
     .map-jump-kicker {
       font-size: 10px;
       letter-spacing: .16em;
       text-transform: uppercase;
-      color: var(--soft);
+      color: rgba(248,243,234,.72);
+    }
+    .map-jump-index {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 28px;
+      height: 28px;
+      padding: 0 8px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.15);
+      font-size: 11px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: rgba(248,243,234,.82);
     }
     .map-jump strong {
       display: block;
-      font-size: 15px;
-      line-height: 1.4;
+      font-size: 23px;
+      line-height: 1.1;
       font-family: Georgia, serif;
-      letter-spacing: -.01em;
+      letter-spacing: -.03em;
+      max-width: 11ch;
     }
-    .map-jump span:last-child {
-      color: var(--muted);
+    .map-jump-phase {
       font-size: 13px;
       line-height: 1.55;
+      color: rgba(248,243,234,.84);
+      max-width: 24ch;
+    }
+    .map-jump-body {
+      display: grid;
+      gap: 10px;
+      padding: 14px 16px 16px;
+    }
+    .map-jump-label {
+      color: var(--ink);
+      font-size: 13px;
+      line-height: 1.55;
+      font-weight: 600;
+    }
+    .map-jump-evidence {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .map-jump-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: rgba(25,50,79,.05);
+      border: 1px solid rgba(25,50,79,.08);
+      color: var(--accent);
+      font-size: 11px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .map-jump-pill[data-tone="evidence"] {
+      background: rgba(180,138,90,.12);
+      color: #6f532f;
     }
     .map-caption h3 { margin: 0 0 6px; font-size: 20px; font-family: Georgia, serif; }
     .map-caption p { margin: 0; color: var(--muted); line-height: 1.7; }
@@ -498,6 +598,54 @@
       display: grid;
       gap: 12px;
       justify-items: end;
+    }
+    .archive-scope {
+      display: grid;
+      gap: 8px;
+      justify-items: end;
+    }
+    .archive-scope-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: flex-end;
+      align-items: center;
+    }
+    .archive-scope-label {
+      font-size: 11px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--soft);
+    }
+    .archive-scope-chip {
+      display: none;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 12px;
+      border-radius: 999px;
+      background: rgba(180,138,90,.12);
+      border: 1px solid rgba(180,138,90,.24);
+      color: #6f532f;
+      font-size: 12px;
+      letter-spacing: .04em;
+    }
+    .archive-scope-chip.active {
+      display: inline-flex;
+    }
+    .archive-scope-clear {
+      display: none;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(25,50,79,.10);
+      background: rgba(255,255,255,.74);
+      color: var(--accent);
+      cursor: pointer;
+      font-size: 12px;
+    }
+    .archive-scope-clear.active {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
     }
     .archive-filter-group {
       display: flex;
@@ -919,6 +1067,13 @@
             </p>
           </div>
           <div class="archive-controls">
+            <div class="archive-scope" id="archiveScope">
+              <div class="archive-scope-meta">
+                <span class="archive-scope-label">Chapter scope</span>
+                <span class="archive-scope-chip" id="archiveScopeChip"></span>
+                <button class="archive-scope-clear" id="archiveScopeClear" type="button">Show full archive</button>
+              </div>
+            </div>
             <div class="archive-filter-group" id="archiveLegend"></div>
             <div class="archive-filter-group" id="archiveSourceFilters"></div>
           </div>
@@ -975,7 +1130,7 @@
       });
     }
 
-    function renderChapters(chapters, sourcesById, artifactsByChapterId, taxonomyById, eventsByChapterId) {
+    function renderChapters(chapters, sourcesById, artifactsByChapterId, taxonomyById, eventsByChapterId, openArchiveScope) {
       const root = document.getElementById('chapters');
       chapters.forEach((chapter) => {
         const article = make('article', 'card chapter');
@@ -1061,8 +1216,7 @@
           const jump = make('button', 'archive-cluster-jump', 'Open cluster in archive');
           jump.type = 'button';
           jump.addEventListener('click', () => {
-            document.getElementById('archiveTimeline')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            focusArchiveEvent(chapterEvents[0].id);
+            openArchiveScope?.(chapter.id, chapterEvents[0].id);
           });
           clusterHeader.append(jump);
           cluster.append(clusterHeader);
@@ -1073,7 +1227,7 @@
             link.type = 'button';
             link.dataset.archiveTarget = event.id;
             link.innerHTML = `<span>${formatEventDate(event.start_date)}</span><strong>${event.text.headline}</strong>`;
-            link.addEventListener('click', () => focusArchiveEvent(event.id));
+            link.addEventListener('click', () => openArchiveScope?.(chapter.id, event.id));
             linkRow.append(link);
           });
           cluster.append(linkRow);
@@ -1169,16 +1323,52 @@
       });
     }
 
-    function renderMapNav(chapters, locationsById) {
+    function chapterTone(chapter) {
+      const blob = `${chapter.id} ${chapter.phase} ${chapter.title}`.toLowerCase();
+      if (blob.includes('early') || blob.includes('formation')) return 'formation';
+      if (blob.includes('research') || blob.includes('cuhk') || blob.includes('california')) return 'research';
+      if (blob.includes('founding') || blob.includes('bloombase')) return 'founder';
+      if (blob.includes('validation') || blob.includes('expansion')) return 'validation';
+      return 'ai-era';
+    }
+
+    function renderMapNav(chapters, locationsById, eventsByChapterId, sourcesById) {
       const root = document.getElementById('mapNav');
-      chapters.forEach((chapter) => {
+      chapters.forEach((chapter, index) => {
         const button = make('button', 'map-jump');
         button.type = 'button';
         button.dataset.target = chapter.id;
+        button.dataset.tone = chapterTone(chapter);
         const location = locationsById.get(chapter.locationId);
-        button.append(make('span', 'map-jump-kicker', chapter.range));
-        button.append(make('strong', '', location?.name || chapter.phase));
-        button.append(make('span', '', chapter.phase));
+        const chapterEvents = eventsByChapterId.get(chapter.id) || [];
+        const eventSourceCount = new Set(chapterEvents.flatMap((event) => event.sourceIds || [])).size;
+
+        const visual = make('div', 'map-jump-visual');
+        const topline = make('div', 'map-jump-topline');
+        topline.append(make('span', 'map-jump-kicker', chapter.range));
+        topline.append(make('span', 'map-jump-index', `0${index + 1}`.slice(-2)));
+        visual.append(topline);
+        visual.append(make('strong', '', location?.name || chapter.phase));
+        visual.append(make('div', 'map-jump-phase', chapter.title));
+
+        const body = make('div', 'map-jump-body');
+        body.append(make('div', 'map-jump-label', location?.label || chapter.phase));
+        const evidence = make('div', 'map-jump-evidence');
+        evidence.append(make('span', 'map-jump-pill', chapter.phase));
+        if (chapterEvents.length) {
+          const pill = make('span', 'map-jump-pill', `${chapterEvents.length} archive event${chapterEvents.length === 1 ? '' : 's'}`);
+          pill.dataset.tone = 'evidence';
+          evidence.append(pill);
+        }
+        if (eventSourceCount) {
+          const sourceTone = Array.from(new Set(chapterEvents.flatMap((event) => event.sourceIds || []).map((sourceId) => sourcesById.get(sourceId)?.publisherType).filter(Boolean))).includes('first-party')
+            ? 'Primary-backed'
+            : 'Context-backed';
+          evidence.append(make('span', 'map-jump-pill', sourceTone));
+        }
+        body.append(evidence);
+
+        button.append(visual, body);
         button.addEventListener('click', () => {
           document.getElementById(chapter.id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
         });
@@ -1242,10 +1432,12 @@
       return map;
     }
 
-    function renderArchive(events, sourcesById) {
+    function renderArchive(events, sourcesById, chaptersById) {
       const timelineRoot = document.getElementById('archiveTimeline');
       const legendRoot = document.getElementById('archiveLegend');
       const sourceFilterRoot = document.getElementById('archiveSourceFilters');
+      const scopeChip = document.getElementById('archiveScopeChip');
+      const scopeClear = document.getElementById('archiveScopeClear');
       const groups = [
         ['all', 'All'],
         ['formation', 'Formation'],
@@ -1260,23 +1452,43 @@
         ['third-party', 'Third-party'],
         ['internal', 'Working notes']
       ];
-      const filters = { group: 'all', origin: 'all' };
+      const filters = { group: 'all', origin: 'all', chapterId: 'all' };
 
       const groupLabel = make('span', 'archive-filter-label', 'Story layer');
       legendRoot.append(groupLabel);
       const originLabel = make('span', 'archive-filter-label', 'Source origin');
       sourceFilterRoot.append(originLabel);
 
+      function syncArchiveScopeUi() {
+        const chapter = filters.chapterId === 'all' ? null : chaptersById.get(filters.chapterId);
+        scopeChip.textContent = chapter ? `${chapter.phase} · ${chapter.range}` : '';
+        scopeChip.classList.toggle('active', Boolean(chapter));
+        scopeClear.classList.toggle('active', Boolean(chapter));
+      }
+
       function applyArchiveFilters() {
         document.querySelectorAll('.timeline-card').forEach((card) => {
           const matchesGroup = filters.group === 'all' || card.dataset.group === filters.group;
           const matchesOrigin = filters.origin === 'all' || card.dataset.origin === filters.origin;
-          card.classList.toggle('hidden', !(matchesGroup && matchesOrigin));
+          const matchesChapter = filters.chapterId === 'all' || card.dataset.chapterId === filters.chapterId;
+          card.classList.toggle('hidden', !(matchesGroup && matchesOrigin && matchesChapter));
         });
         document.querySelectorAll('.timeline-event').forEach((eventEl) => {
           const visibleCards = Array.from(eventEl.querySelectorAll('.timeline-card')).filter((card) => !card.classList.contains('hidden'));
           eventEl.style.display = visibleCards.length ? '' : 'none';
         });
+        syncArchiveScopeUi();
+      }
+
+      function openArchiveScope(chapterId, eventId) {
+        if (chapterId) {
+          filters.chapterId = chapterId;
+          applyArchiveFilters();
+        }
+        document.getElementById('archiveTimeline')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        if (eventId) {
+          window.setTimeout(() => focusArchiveEvent(eventId), 120);
+        }
       }
 
       groups.forEach(([value, label], index) => {
@@ -1303,6 +1515,11 @@
         sourceFilterRoot.append(button);
       });
 
+      scopeClear?.addEventListener('click', () => {
+        filters.chapterId = 'all';
+        applyArchiveFilters();
+      });
+
       const byYear = new Map();
       events.forEach((event) => {
         const year = String(event.start_date.year);
@@ -1327,6 +1544,7 @@
           const card = make('article', 'timeline-card');
           card.dataset.group = group;
           card.dataset.origin = origin;
+          card.dataset.chapterId = event.chapterId || '';
           if (event.id) {
             card.dataset.eventId = event.id;
             card.id = `archive-${event.id}`;
@@ -1368,6 +1586,7 @@
       });
 
       applyArchiveFilters();
+      return { openArchiveScope };
     }
 
     function buildJourneyStages(chapters, locationById) {
@@ -1651,6 +1870,7 @@
       const sourcesById = new Map(sources.map((source) => [source.id, source]));
       const taxonomyById = new Map(artifactTaxonomy.map((entry) => [entry.id, entry]));
       const locationById = new Map(locations.map((location) => [location.id, location]));
+      const chaptersById = new Map(chapters.map((chapter) => [chapter.id, chapter]));
       const eventsByChapterId = buildEventsByChapterId(timeline.events);
       const artifactsByChapterId = new Map();
       artifacts.forEach((artifact) => {
@@ -1658,11 +1878,11 @@
         artifactsByChapterId.get(artifact.chapterId).push(artifact);
       });
       renderPhaseRail(chapters);
-      renderChapters(chapters, sourcesById, artifactsByChapterId, taxonomyById, eventsByChapterId);
-      renderMapNav(chapters, locationById);
+      const archiveApi = renderArchive(timeline.events, sourcesById, chaptersById);
+      renderChapters(chapters, sourcesById, artifactsByChapterId, taxonomyById, eventsByChapterId, archiveApi.openArchiveScope);
+      renderMapNav(chapters, locationById, eventsByChapterId, sourcesById);
       const setActiveLocation = initializeMap(locations, chapters);
       renderValidation(validationGroups);
-      renderArchive(timeline.events, sourcesById);
       renderPresentDirection(presentDirection, sourcesById);
       renderSources(sources);
       activateScrollSync(chapters, setActiveLocation);
