@@ -1179,6 +1179,93 @@
       border: 1px dashed rgba(25, 50, 79, 0.14);
       background: rgba(255,255,255,.58);
     }
+    .roadmap-wrap {
+      margin-top: 22px;
+      display: grid;
+      gap: 12px;
+    }
+    .roadmap-card {
+      padding: 20px;
+      border-radius: 22px;
+      border: 1px solid rgba(25,50,79,.08);
+      background: linear-gradient(180deg, rgba(255,255,255,.84), rgba(246,243,237,.72));
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.45);
+    }
+    .roadmap-topline {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    .roadmap-card h3 {
+      margin: 0 0 8px;
+      font-size: 22px;
+      line-height: 1.3;
+      color: var(--ink);
+    }
+    .roadmap-card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+    .roadmap-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 16px;
+    }
+    .roadmap-metric {
+      padding: 14px;
+      border-radius: 16px;
+      background: rgba(255,255,255,.72);
+      border: 1px solid rgba(25,50,79,.08);
+    }
+    .roadmap-metric strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 11px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--soft);
+    }
+    .roadmap-metric span {
+      display: block;
+      color: var(--ink);
+      line-height: 1.58;
+      font-size: 13px;
+    }
+    .roadmap-source-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+    .roadmap-source-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      font-size: 11px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      border: 1px solid rgba(25,50,79,.08);
+      background: rgba(25,50,79,.04);
+      color: var(--accent);
+    }
+    .roadmap-source-pill[data-tone="high"] {
+      background: rgba(180,138,90,.14);
+      color: #6f532f;
+    }
+    .roadmap-source-pill[data-tone="queued"] {
+      background: rgba(231,228,244,.84);
+      color: #5d5680;
+    }
+    .roadmap-source-pill[data-tone="open"] {
+      background: rgba(215,233,239,.82);
+      color: #20475d;
+    }
     .sources-list { display: grid; gap: 12px; margin-top: 18px; }
     .source-item {
       display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 14px; align-items: start;
@@ -1233,7 +1320,7 @@
       .phase-rail ol { grid-template-columns: repeat(3, minmax(0,1fr)); }
       .archive-controls { justify-items: start; }
       .archive-filter-group { justify-content: flex-start; }
-      .audit-row { grid-template-columns: 1fr; }
+      .audit-row, .roadmap-grid { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 700px) {
@@ -1415,6 +1502,14 @@
             <p>The strongest next upgrades are not cosmetic. They are direct public documents that can tighten the earliest academic and founding years without overclaiming.</p>
             <div class="audit-gaps" id="sourceGaps"></div>
           </aside>
+        </div>
+        <div class="roadmap-wrap" id="sourceRoadmapWrap">
+          <section class="audit-card">
+            <div class="section-label">Evidence roadmap</div>
+            <h3>The next capture targets are now part of the product, not just a repo note</h3>
+            <p>This ledger translates the research memo into a visible sourcing roadmap: what claim needs better proof, what kind of document would actually improve the chronicle, and how that capture would change the reading experience.</p>
+            <div class="roadmap-wrap" id="sourceRoadmap"></div>
+          </section>
         </div>
         <div class="sources-list" id="sourcesList"></div>
         <p class="footer-note">Next upgrade path: capture stronger direct primary sources for the earliest formation chapter, then deepen real media artifacts only where the sourcing is strong enough to carry them.</p>
@@ -1836,6 +1931,77 @@
       foundingGap.append(make('strong', '', 'High-leverage next captures'));
       foundingGap.append(make('span', '', 'Best next wins: direct public documentation for the earliest education / acceleration story, plus tighter founding-year material that can narrow the jump between research formation and Bloombase\'s first 2013 release trail.'));
       gapsRoot.append(foundingGap);
+    }
+
+    function roadmapTone(entry) {
+      const priority = (entry.priority || '').toLowerCase();
+      const status = (entry.status || '').toLowerCase();
+      if (priority === 'high') return 'high';
+      if (status === 'queued') return 'queued';
+      return 'open';
+    }
+
+    function renderSourceRoadmap(roadmap, chaptersById, sourcesById) {
+      const root = document.getElementById('sourceRoadmap');
+      if (!root) return;
+
+      roadmap.forEach((entry) => {
+        const chapter = chaptersById.get(entry.chapterId);
+        const card = make('article', 'roadmap-card');
+        const topline = make('div', 'roadmap-topline');
+
+        const priority = make('span', 'roadmap-source-pill', `${entry.priority} priority`);
+        priority.dataset.tone = roadmapTone(entry);
+        topline.append(priority);
+
+        const status = make('span', 'roadmap-source-pill', entry.status);
+        status.dataset.tone = roadmapTone(entry);
+        topline.append(status);
+
+        if (chapter) {
+          const chapterPill = make('span', 'roadmap-source-pill', `${chapter.phase} · ${chapter.range}`);
+          topline.append(chapterPill);
+        }
+
+        card.append(topline);
+        card.append(make('h3', '', entry.title));
+        card.append(make('p', '', entry.claim));
+
+        const grid = make('div', 'roadmap-grid');
+        [
+          ['Wanted evidence', entry.desiredEvidence],
+          ['Why it matters', entry.whyItMatters],
+          ['Target effect', entry.targetEffect]
+        ].forEach(([label, text]) => {
+          const metric = make('div', 'roadmap-metric');
+          metric.append(make('strong', '', label));
+          metric.append(make('span', '', text));
+          grid.append(metric);
+        });
+        card.append(grid);
+
+        if (entry.notes) {
+          const notes = make('p', 'archive-note', entry.notes);
+          notes.style.marginTop = '14px';
+          card.append(notes);
+        }
+
+        if ((entry.currentAnchors || []).length) {
+          const sourceRow = make('div', 'roadmap-source-row');
+          entry.currentAnchors.forEach((sourceId) => {
+            const source = sourcesById.get(sourceId);
+            if (!source) return;
+            const pill = make('a', 'roadmap-source-pill', source.label);
+            pill.href = source.url;
+            pill.target = source.url.startsWith('http') ? '_blank' : '_self';
+            if (pill.target === '_blank') pill.rel = 'noreferrer';
+            sourceRow.append(pill);
+          });
+          card.append(sourceRow);
+        }
+
+        root.append(card);
+      });
     }
 
     function renderSources(sources) {
@@ -2405,7 +2571,7 @@
     }
 
     async function init() {
-      const [chapters, locations, validationGroups, sources, timeline, artifacts, artifactTaxonomy, presentDirection] = await Promise.all([
+      const [chapters, locations, validationGroups, sources, timeline, artifacts, artifactTaxonomy, presentDirection, sourceRoadmap] = await Promise.all([
         loadJson('./data/chapters.json'),
         loadJson('./data/locations.json'),
         loadJson('./data/validation.json'),
@@ -2413,7 +2579,8 @@
         loadJson('./data/timeline.json'),
         loadJson('./data/artifacts.json'),
         loadJson('./data/artifact-taxonomy.json'),
-        loadJson('./data/present-direction.json')
+        loadJson('./data/present-direction.json'),
+        loadJson('./data/source-roadmap.json')
       ]);
 
       const sourcesById = new Map(sources.map((source) => [source.id, source]));
@@ -2435,6 +2602,7 @@
       renderPresentDirection(presentDirection, sourcesById);
       renderSourceSummary(sources);
       renderEvidenceAudit(chapters, sourcesById, eventsByChapterId, artifactsByChapterId);
+      renderSourceRoadmap(sourceRoadmap, chaptersById, sourcesById);
       renderSources(sources);
       activateScrollSync(chapters, setActiveLocation);
     }
