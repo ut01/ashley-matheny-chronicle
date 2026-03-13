@@ -1266,16 +1266,126 @@
       background: rgba(215,233,239,.82);
       color: #20475d;
     }
+    .source-explorer {
+      margin-top: 18px;
+      margin-bottom: 18px;
+    }
+    .source-explorer-header {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(320px, .92fr);
+      gap: 18px;
+      align-items: start;
+    }
+    .source-controls {
+      display: grid;
+      gap: 12px;
+    }
+    .source-filter-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+    }
+    .source-filter-label {
+      font-size: 11px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--soft);
+      margin-right: 2px;
+    }
+    .source-filter-chip,
+    .source-active-chip,
+    .source-support-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(25,50,79,.08);
+      background: rgba(255,255,255,.7);
+      color: var(--accent);
+      font-size: 11px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: .18s ease;
+    }
+    .source-filter-chip:hover,
+    .source-support-chip:hover {
+      transform: translateY(-1px);
+      border-color: rgba(25,50,79,.14);
+      background: rgba(25,50,79,.08);
+    }
+    .source-filter-chip.active {
+      background: rgba(25,50,79,.1);
+      border-color: rgba(25,50,79,.16);
+      color: var(--ink);
+    }
+    .source-active-state {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+      min-height: 24px;
+    }
+    .source-active-chip {
+      cursor: default;
+      background: rgba(25,50,79,.08);
+    }
     .sources-list { display: grid; gap: 12px; margin-top: 18px; }
     .source-item {
       display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 14px; align-items: start;
-      padding: 16px 18px; border-radius: 18px; background: rgba(255,255,255,.66); border: 1px solid rgba(25,50,79,.08);
+      padding: 18px 18px 16px; border-radius: 18px; background: rgba(255,255,255,.66); border: 1px solid rgba(25,50,79,.08);
+    }
+    .source-item-main {
+      display: grid;
+      gap: 12px;
     }
     .source-meta {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      margin: 0 0 10px;
+      margin: 0;
+    }
+    .source-support {
+      display: grid;
+      gap: 10px;
+      padding-top: 2px;
+    }
+    .source-support-title {
+      font-size: 11px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--soft);
+    }
+    .source-support-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .source-support-chip {
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .source-support-chip[data-tone="primary"] {
+      background: rgba(180,138,90,.12);
+      color: #6f532f;
+    }
+    .source-support-chip[data-tone="context"] {
+      background: rgba(45,95,115,.09);
+      color: #214c5e;
+    }
+    .source-support-chip[data-tone="working"] {
+      background: rgba(25,50,79,.06);
+      color: var(--accent);
+    }
+    .source-empty {
+      padding: 20px 22px;
+      border-radius: 18px;
+      background: rgba(255,255,255,.62);
+      border: 1px dashed rgba(25,50,79,.18);
+      color: var(--muted);
+      line-height: 1.7;
     }
     .source-pill-meta {
       display: inline-flex;
@@ -1315,7 +1425,7 @@
     .footer-note { margin-top: 18px; color: var(--soft); font-size: 13px; line-height: 1.7; }
 
     @media (max-width: 1080px) {
-      .hero, .overview, .main-grid, .archive-header, .present-grid, .evidence-audit { grid-template-columns: 1fr; }
+      .hero, .overview, .main-grid, .archive-header, .present-grid, .evidence-audit, .source-explorer-header { grid-template-columns: 1fr; }
       .sticky-stack { position: static; }
       .phase-rail ol { grid-template-columns: repeat(3, minmax(0,1fr)); }
       .archive-controls { justify-items: start; }
@@ -1332,6 +1442,7 @@
       .thesis-grid { grid-template-columns: 1fr; }
       .evidence-strip, .source-summary { grid-template-columns: 1fr; }
       .source-item { grid-template-columns: 1fr; }
+      .source-support-row, .source-filter-group, .source-active-state { align-items: flex-start; }
       .archive-timeline::before { left: 24px; }
       .timeline-event { grid-template-columns: 1fr; gap: 8px; }
       .timeline-year { position: static; text-align: left; padding-left: 40px; }
@@ -1489,6 +1600,21 @@
           The source archive is not decorative. It is what moves the page away from tribute aesthetics and toward museum-style credibility. Some early-life details remain intentionally restrained because the public record still needs stronger confirmation.
         </p>
         <div class="source-summary" id="sourceSummary"></div>
+        <section class="audit-card source-explorer">
+          <div class="section-label">Source explorer</div>
+          <div class="source-explorer-header">
+            <div>
+              <h3>Browse the evidence by chapter, source origin, and proof posture</h3>
+              <p>The archive below is now organized like an editorial evidence desk: readers can isolate first-party material, see which chapters each document supports, and distinguish strong primary proof from connective context or working synthesis.</p>
+            </div>
+            <div class="source-controls">
+              <div class="source-filter-group" id="sourceOriginFilters"></div>
+              <div class="source-filter-group" id="sourceEvidenceFilters"></div>
+              <div class="source-filter-group" id="sourceChapterFilters"></div>
+            </div>
+          </div>
+          <div class="source-active-state" id="sourceActiveState"></div>
+        </section>
         <div class="evidence-audit" id="evidenceAudit">
           <section class="audit-card">
             <div class="section-label">Chapter evidence matrix</div>
@@ -2004,38 +2130,202 @@
       });
     }
 
-    function renderSources(sources) {
-      const root = document.getElementById('sourcesList');
-      sources.forEach((source) => {
-        const article = make('article', 'source-item');
-        const copy = make('div');
-        const meta = make('div', 'source-meta');
+    function sourceSupportTone(source) {
+      if (source.publisherType === 'first-party') return 'primary';
+      if (source.publisherType === 'third-party') return 'context';
+      return 'working';
+    }
 
-        [
-          [source.publisherLabel, source.publisherType],
-          [source.categoryLabel, source.category],
-          [source.evidenceLabel, source.evidenceLevel],
-          [source.directnessLabel, source.publisherType === 'first-party' ? 'primary' : 'context'],
-          [source.artifactReadinessLabel, source.publisherType === 'internal' ? 'working' : source.evidenceLevel],
-          [source.year, 'year']
-        ].forEach(([label, tone]) => {
-          if (!label) return;
-          const pill = make('span', 'source-pill-meta', label);
-          pill.dataset.tone = tone;
-          meta.append(pill);
+    function buildSourceSupportMap(sources, chapters, eventsByChapterId, artifactsByChapterId) {
+      const supportMap = new Map();
+      sources.forEach((source) => {
+        supportMap.set(source.id, { chapterIds: new Set(), eventCount: 0, artifactCount: 0 });
+      });
+
+      chapters.forEach((chapter) => {
+        (chapter.sources || []).forEach((sourceId) => {
+          if (!supportMap.has(sourceId)) return;
+          supportMap.get(sourceId).chapterIds.add(chapter.id);
+        });
+      });
+
+      eventsByChapterId.forEach((events, chapterId) => {
+        events.forEach((event) => {
+          (event.sourceIds || []).forEach((sourceId) => {
+            if (!supportMap.has(sourceId)) return;
+            const entry = supportMap.get(sourceId);
+            entry.chapterIds.add(chapterId);
+            entry.eventCount += 1;
+          });
+        });
+      });
+
+      artifactsByChapterId.forEach((artifacts, chapterId) => {
+        artifacts.forEach((artifact) => {
+          [...new Set([...(artifact.sourceIds || []), artifact.sourceId].filter(Boolean))].forEach((sourceId) => {
+            if (!supportMap.has(sourceId)) return;
+            const entry = supportMap.get(sourceId);
+            entry.chapterIds.add(chapterId);
+            entry.artifactCount += 1;
+          });
+        });
+      });
+
+      return supportMap;
+    }
+
+    function renderSources(sources, chapters, chaptersById, eventsByChapterId, artifactsByChapterId) {
+      const root = document.getElementById('sourcesList');
+      const originRoot = document.getElementById('sourceOriginFilters');
+      const evidenceRoot = document.getElementById('sourceEvidenceFilters');
+      const chapterRoot = document.getElementById('sourceChapterFilters');
+      const activeRoot = document.getElementById('sourceActiveState');
+      if (!root) return;
+
+      const supportMap = buildSourceSupportMap(sources, chapters, eventsByChapterId, artifactsByChapterId);
+      const filters = { origin: 'all', evidence: 'all', chapter: 'all' };
+      const filterSets = [
+        {
+          root: originRoot,
+          label: 'Source origin',
+          key: 'origin',
+          options: [['all', 'All origins'], ['first-party', 'First-party'], ['third-party', 'Third-party'], ['internal', 'Working notes']]
+        },
+        {
+          root: evidenceRoot,
+          label: 'Proof posture',
+          key: 'evidence',
+          options: [['all', 'All evidence'], ['primary', 'Primary'], ['context', 'Context'], ['working', 'Working']]
+        },
+        {
+          root: chapterRoot,
+          label: 'Chapter support',
+          key: 'chapter',
+          options: [['all', 'All chapters'], ...chapters.map((chapter) => [chapter.id, chapter.phase])]
+        }
+      ];
+
+      function supportSummary(source) {
+        const support = supportMap.get(source.id) || { chapterIds: new Set(), eventCount: 0, artifactCount: 0 };
+        return {
+          chapters: Array.from(support.chapterIds).map((chapterId) => chaptersById.get(chapterId)).filter(Boolean),
+          eventCount: support.eventCount,
+          artifactCount: support.artifactCount
+        };
+      }
+
+      function renderActiveState() {
+        if (!activeRoot) return;
+        activeRoot.innerHTML = '';
+        const items = [];
+        if (filters.origin !== 'all') items.push(`Origin: ${filters.origin.replace('-', ' ')}`);
+        if (filters.evidence !== 'all') items.push(`Proof: ${filters.evidence}`);
+        if (filters.chapter !== 'all') items.push(`Chapter: ${chaptersById.get(filters.chapter)?.phase || filters.chapter}`);
+        items.forEach((label) => activeRoot.append(make('span', 'source-active-chip', label)));
+      }
+
+      function draw() {
+        root.innerHTML = '';
+        renderActiveState();
+
+        const filtered = sources.filter((source) => {
+          const sourceTone = sourceSupportTone(source);
+          const support = supportMap.get(source.id);
+          const matchesOrigin = filters.origin === 'all' || source.publisherType === filters.origin;
+          const matchesEvidence = filters.evidence === 'all' || sourceTone === filters.evidence;
+          const matchesChapter = filters.chapter === 'all' || support?.chapterIds?.has(filters.chapter);
+          return matchesOrigin && matchesEvidence && matchesChapter;
         });
 
-        copy.append(meta);
-        copy.append(make('strong', '', source.label));
-        copy.append(make('p', '', source.note));
-        article.append(copy);
-        const link = make('a', '', source.url.startsWith('http') ? 'Open source' : 'Open file');
-        link.href = source.url;
-        link.target = source.url.startsWith('http') ? '_blank' : '_self';
-        if (link.target === '_blank') link.rel = 'noreferrer';
-        article.append(link);
-        root.append(article);
+        if (!filtered.length) {
+          root.append(make('div', 'source-empty', 'No sources match this combination yet. Try clearing one filter or switching back to all chapters.'));
+          return;
+        }
+
+        filtered.forEach((source) => {
+          const article = make('article', 'source-item');
+          const copy = make('div', 'source-item-main');
+          const meta = make('div', 'source-meta');
+          const support = supportSummary(source);
+
+          [
+            [source.publisherLabel, source.publisherType],
+            [source.categoryLabel, source.category],
+            [source.evidenceLabel, source.evidenceLevel],
+            [source.directnessLabel, source.publisherType === 'first-party' ? 'primary' : 'context'],
+            [source.artifactReadinessLabel, source.publisherType === 'internal' ? 'working' : source.evidenceLevel],
+            [source.year, 'year']
+          ].forEach(([label, tone]) => {
+            if (!label) return;
+            const pill = make('span', 'source-pill-meta', label);
+            pill.dataset.tone = tone;
+            meta.append(pill);
+          });
+
+          copy.append(meta);
+          copy.append(make('strong', '', source.label));
+          copy.append(make('p', '', source.note));
+
+          const supportBox = make('div', 'source-support');
+          const coverageBits = [];
+          if (support.chapters.length) coverageBits.push(`${support.chapters.length} chapter${support.chapters.length === 1 ? '' : 's'}`);
+          if (support.eventCount) coverageBits.push(`${support.eventCount} archive event${support.eventCount === 1 ? '' : 's'}`);
+          if (support.artifactCount) coverageBits.push(`${support.artifactCount} artifact${support.artifactCount === 1 ? '' : 's'}`);
+          supportBox.append(make('div', 'source-support-title', coverageBits.length ? `Supports ${coverageBits.join(' / ')}` : 'Support coverage still being mapped'));
+
+          if (support.chapters.length) {
+            const row = make('div', 'source-support-row');
+            support.chapters.forEach((chapter) => {
+              const button = make('button', 'source-support-chip', `${chapter.phase} / ${chapter.range}`);
+              button.type = 'button';
+              button.dataset.tone = sourceSupportTone(source);
+              button.addEventListener('click', () => {
+                filters.chapter = chapter.id;
+                syncFilterButtons();
+                draw();
+              });
+              row.append(button);
+            });
+            supportBox.append(row);
+          }
+
+          copy.append(supportBox);
+          article.append(copy);
+          const link = make('a', '', source.url.startsWith('http') ? 'Open source' : 'Open file');
+          link.href = source.url;
+          link.target = source.url.startsWith('http') ? '_blank' : '_self';
+          if (link.target === '_blank') link.rel = 'noreferrer';
+          article.append(link);
+          root.append(article);
+        });
+      }
+
+      function syncFilterButtons() {
+        filterSets.forEach(({ root, key }) => {
+          root?.querySelectorAll('.source-filter-chip').forEach((chip) => {
+            chip.classList.toggle('active', chip.dataset.value === filters[key]);
+          });
+        });
+      }
+
+      filterSets.forEach(({ root, label, key, options }) => {
+        if (!root) return;
+        root.innerHTML = '';
+        root.append(make('span', 'source-filter-label', label));
+        options.forEach(([value, text], index) => {
+          const button = make('button', `source-filter-chip${index === 0 ? ' active' : ''}`, text);
+          button.type = 'button';
+          button.dataset.value = value;
+          button.addEventListener('click', () => {
+            filters[key] = value;
+            syncFilterButtons();
+            draw();
+          });
+          root.append(button);
+        });
       });
+
+      draw();
     }
 
     function chapterTone(chapter) {
@@ -2603,7 +2893,7 @@
       renderSourceSummary(sources);
       renderEvidenceAudit(chapters, sourcesById, eventsByChapterId, artifactsByChapterId);
       renderSourceRoadmap(sourceRoadmap, chaptersById, sourcesById);
-      renderSources(sources);
+      renderSources(sources, chapters, chaptersById, eventsByChapterId, artifactsByChapterId);
       activateScrollSync(chapters, setActiveLocation);
     }
 
