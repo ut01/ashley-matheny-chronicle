@@ -200,6 +200,140 @@
       transform: translateY(-1px);
     }
 
+    .chapter-compass-wrap { margin: 0 0 32px; }
+    .chapter-compass-panel { padding: 28px; }
+    .chapter-compass-header {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(280px, .8fr);
+      gap: 18px;
+      align-items: start;
+      margin-bottom: 22px;
+    }
+    .chapter-compass-actions {
+      display: grid;
+      gap: 10px;
+      align-content: start;
+    }
+    .deep-desk-card {
+      padding: 18px;
+      border-radius: 22px;
+      background: linear-gradient(135deg, rgba(25,50,79,.92), rgba(46,79,103,.9));
+      color: #f7f2e9;
+      border: 1px solid rgba(255,255,255,.08);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.12);
+    }
+    .deep-desk-card p {
+      margin: 8px 0 0;
+      color: rgba(247,242,233,.82);
+      line-height: 1.7;
+      font-size: 14px;
+    }
+    .deep-desk-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+    .deep-desk-button {
+      border: 0;
+      cursor: pointer;
+      font: inherit;
+      padding: 10px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.14);
+      color: #f7f2e9;
+      font-size: 12px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .chapter-compass-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .chapter-compass-card {
+      display: grid;
+      gap: 14px;
+      padding: 20px;
+      border-radius: 24px;
+      border: 1px solid rgba(25,50,79,.08);
+      background: linear-gradient(180deg, rgba(255,255,255,.86), rgba(246,243,237,.72));
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.46);
+      transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+    }
+    .chapter-compass-card.is-active {
+      border-color: rgba(25,50,79,.18);
+      box-shadow: 0 16px 30px rgba(25,50,79,.10);
+      transform: translateY(-2px);
+    }
+    .chapter-compass-topline {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+    }
+    .chapter-compass-card h3 {
+      margin: 0;
+      font-family: Georgia, serif;
+      font-size: 24px;
+      line-height: 1.24;
+      letter-spacing: -.02em;
+    }
+    .chapter-compass-card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.72;
+    }
+    .chapter-compass-metrics {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+    .chapter-compass-metric {
+      padding: 13px 14px;
+      border-radius: 18px;
+      background: rgba(255,255,255,.72);
+      border: 1px solid rgba(25,50,79,.08);
+    }
+    .chapter-compass-metric strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 11px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--soft);
+    }
+    .chapter-compass-metric span {
+      display: block;
+      color: var(--ink);
+      line-height: 1.55;
+      font-size: 13px;
+    }
+    .chapter-compass-actions-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .chapter-compass-button {
+      border: 0;
+      cursor: pointer;
+      font: inherit;
+      text-decoration: none;
+      padding: 10px 12px;
+      border-radius: 999px;
+      background: rgba(25,50,79,.06);
+      border: 1px solid rgba(25,50,79,.08);
+      color: var(--accent);
+      font-size: 12px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .chapter-compass-button.primary {
+      background: var(--accent);
+      color: #f6f1e7;
+    }
+
     .overview {
       display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(320px, .95fr); gap: 24px; margin-bottom: 34px;
     }
@@ -2022,12 +2156,12 @@
     .footer-note { margin-top: 18px; color: var(--soft); font-size: 13px; line-height: 1.7; }
 
     @media (max-width: 1080px) {
-      .hero, .overview, .main-grid, .archive-header, .present-grid, .evidence-audit, .source-explorer-header, .exhibit-grid, .ledger-grid, .reader-modes { grid-template-columns: 1fr; }
+      .hero, .overview, .main-grid, .archive-header, .present-grid, .evidence-audit, .source-explorer-header, .exhibit-grid, .ledger-grid, .reader-modes, .chapter-compass-header { grid-template-columns: 1fr; }
       .sticky-stack { position: static; }
       .phase-rail ol { grid-template-columns: repeat(3, minmax(0,1fr)); }
       .archive-controls { justify-items: start; }
       .archive-filter-group { justify-content: flex-start; }
-      .audit-row, .roadmap-grid, .source-dossier-meta { grid-template-columns: 1fr; }
+      .audit-row, .roadmap-grid, .source-dossier-meta, .chapter-compass-grid, .chapter-compass-metrics { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 700px) {
@@ -2037,7 +2171,7 @@
       .chapter { padding-left: 28px; }
       .chapter::before { left: 12px; }
       .thesis-grid { grid-template-columns: 1fr; }
-      .evidence-strip, .source-summary, .source-dossier-grid, .ledger-metrics { grid-template-columns: 1fr; }
+      .evidence-strip, .source-summary, .source-dossier-grid, .ledger-metrics, .chapter-compass-metrics { grid-template-columns: 1fr; }
       .source-item { grid-template-columns: 1fr; }
       .source-support-row, .source-filter-group, .source-active-state { align-items: flex-start; }
       .archive-timeline::before { left: 24px; }
@@ -2100,6 +2234,29 @@
     <nav class="phase-rail card" aria-label="Chapter navigation">
       <ol id="phaseRail"></ol>
     </nav>
+
+    <section class="chapter-compass-wrap">
+      <article class="card chapter-compass-panel">
+        <div class="chapter-compass-header">
+          <div>
+            <div class="section-label">Chapter compass</div>
+            <h2>Choose the reading path chapter by chapter, before the full long-form run begins</h2>
+            <p class="ledger-intro" style="margin-bottom:0;">
+              This compact rail translates the skim/deep split into actual navigation. Each card shows what the chapter is doing editorially, how much proof density sits behind it, and the fastest way either to read the narrative or drop into the deeper evidence desk.
+            </p>
+          </div>
+          <div class="chapter-compass-actions">
+            <div class="deep-desk-card">
+              <div class="section-label" style="color:rgba(247,242,233,.66); margin-bottom:8px;">Deep evidence desk</div>
+              <strong style="display:block; font-family:Georgia,serif; font-size:28px; line-height:1.18; letter-spacing:-.02em;">Open the archive by intention, not by accident</strong>
+              <p>Deep mode now has explicit entry points: jump straight into curated exhibits, the denser chronology, or the source desk without losing the chapter spine.</p>
+              <div class="deep-desk-actions" id="deepDeskActions"></div>
+            </div>
+          </div>
+        </div>
+        <div class="chapter-compass-grid" id="chapterCompass"></div>
+      </article>
+    </section>
 
     <section class="overview">
       <article class="card overview-copy">
@@ -2326,6 +2483,109 @@
         stat.append(make('strong', '', value));
         stat.append(make('span', '', text));
         root.append(stat);
+      });
+    }
+
+    function renderChapterCompass(chapters, sourcesById, eventsByChapterId, artifactsByChapterId, roadmap = [], openArchiveScope) {
+      const root = document.getElementById('chapterCompass');
+      const deepDeskRoot = document.getElementById('deepDeskActions');
+      if (!root || !deepDeskRoot) return;
+
+      const roadmapByChapter = new Map();
+      (roadmap || []).forEach((entry) => {
+        if (!roadmapByChapter.has(entry.chapterId)) roadmapByChapter.set(entry.chapterId, []);
+        roadmapByChapter.get(entry.chapterId).push(entry);
+      });
+
+      function jumpToDeepSection(targetId) {
+        window.setReadingMode?.('deep');
+        document.getElementById(targetId)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+
+      [
+        ['exhibitGrid', 'Open exhibits'],
+        ['archiveTimeline', 'Open chronology'],
+        ['sources', 'Open source desk']
+      ].forEach(([targetId, label]) => {
+        const button = make('button', 'deep-desk-button', label);
+        button.type = 'button';
+        button.addEventListener('click', () => jumpToDeepSection(targetId));
+        deepDeskRoot.append(button);
+      });
+
+      const auditRows = buildChapterAudit(chapters, sourcesById, eventsByChapterId, artifactsByChapterId);
+      const cardsByChapter = new Map();
+      auditRows.forEach((entry) => {
+        const chapter = entry.chapter;
+        const card = make('article', 'chapter-compass-card');
+        card.dataset.chapter = chapter.id;
+
+        const topline = make('div', 'chapter-compass-topline');
+        const phase = make('span', 'artifact-pill', `${chapter.phase} · ${chapter.range}`);
+        phase.dataset.tone = entry.tone === 'ready' ? 'validation' : entry.tone === 'primary' ? 'evidence' : entry.tone === 'context' ? 'primary' : 'present';
+        topline.append(phase);
+        const status = make('span', 'artifact-pill', entry.statusLabel);
+        status.dataset.tone = entry.tone === 'ready' ? 'validation' : entry.tone === 'primary' ? 'evidence' : entry.tone === 'context' ? 'primary' : 'present';
+        topline.append(status);
+        const roadmapEntries = roadmapByChapter.get(chapter.id) || [];
+        if (roadmapEntries.length) {
+          const gap = make('span', 'artifact-pill', `${roadmapEntries.length} open capture target${roadmapEntries.length === 1 ? '' : 's'}`);
+          gap.dataset.tone = 'context';
+          topline.append(gap);
+        }
+        card.append(topline);
+
+        card.append(make('h3', '', chapter.phase));
+        card.append(make('p', '', chapter.dek));
+
+        const strongestSource = (chapter.sources || [])
+          .map((sourceId) => sourcesById.get(sourceId))
+          .filter(Boolean)
+          .sort((a, b) => {
+            const rank = { direct: 0, bridge: 1, working: 2 };
+            return (rank[a.verificationState] ?? 3) - (rank[b.verificationState] ?? 3);
+          })[0];
+
+        const metrics = make('div', 'chapter-compass-metrics');
+        [
+          ['Narrative role', chapter.title],
+          ['Evidence density', `${entry.eventCount} archive event${entry.eventCount === 1 ? '' : 's'} · ${entry.artifactCount} artifact${entry.artifactCount === 1 ? '' : 's'}`],
+          ['Best current anchor', strongestSource ? strongestSource.label : 'Working synthesis still leads this chapter'],
+          ['Next upgrade', roadmapEntries[0]?.title || chapter.evidenceProfile?.artifact || 'No new capture target queued yet']
+        ].forEach(([label, value]) => {
+          const metric = make('div', 'chapter-compass-metric');
+          metric.append(make('strong', '', label));
+          metric.append(make('span', '', value));
+          metrics.append(metric);
+        });
+        card.append(metrics);
+
+        const actions = make('div', 'chapter-compass-actions-row');
+        const readButton = make('button', 'chapter-compass-button primary', 'Read chapter');
+        readButton.type = 'button';
+        readButton.addEventListener('click', () => {
+          announceChapterFocus(chapter.id, { scrollArchive: true });
+          document.getElementById(chapter.id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+        actions.append(readButton);
+
+        const evidenceButton = make('button', 'chapter-compass-button', 'Open evidence desk');
+        evidenceButton.type = 'button';
+        evidenceButton.addEventListener('click', () => {
+          announceChapterFocus(chapter.id, { scrollSources: true, scrollArchive: true });
+          window.setReadingMode?.('deep');
+          openArchiveScope?.(chapter.id);
+        });
+        actions.append(evidenceButton);
+
+        card.append(actions);
+        root.append(card);
+        cardsByChapter.set(chapter.id, card);
+      });
+
+      window.addEventListener('chronicle:focus-chapter', (event) => {
+        const chapterId = event.detail?.chapterId;
+        cardsByChapter.forEach((card, id) => card.classList.toggle('is-active', id === chapterId));
       });
     }
 
@@ -4195,6 +4455,7 @@
       renderHeroStats(chapters, locations, timeline, sources);
       initializeReaderModes();
       const archiveApi = renderArchive(timeline.events, sourcesById, chaptersById);
+      renderChapterCompass(chapters, sourcesById, eventsByChapterId, artifactsByChapterId, sourceRoadmap, archiveApi.openArchiveScope);
       renderChapterLedger(chapters, sourcesById, eventsByChapterId, artifactsByChapterId, sourceRoadmap, archiveApi.openArchiveScope);
       renderChapters(chapters, sourcesById, artifactsByChapterId, taxonomyById, eventsByChapterId, archiveApi.openArchiveScope);
       renderMapNav(chapters, locationById, eventsByChapterId, sourcesById);

@@ -43,9 +43,15 @@
   - skim mode keeps thesis, chapter arc, map, validation, and present-direction surfaces visible
   - deep mode opens the exhibit desk, reference timeline, source explorer, roadmap, and public-record layers
   - chapter body copy now trims to the lead paragraph in skim mode while preserving full narrative in deep mode
+- new chapter-compass layer added between the sticky phase rail and the long-form narrative so skim/deep mode becomes a real navigation system instead of just a toggle:
+  - compact chapter cards now summarize each chapter’s editorial role, evidence density, strongest current anchor, and next upgrade target
+  - a dedicated deep-evidence-desk card now offers explicit jumps into exhibits, chronology, and the source archive
+  - chapter focus events now light up the matching compass card, making the chapter spine feel like a premium IA surface rather than passive ornament
 
 ## Next implementation steps
 1. Strengthen the source archive further by capturing more direct primary URLs for early academic details, especially anything tighter than the current profile-level CUHK / Beckman trail.
 2. Populate the new media-deck slots with actual preserved captures or conference visuals for the AI-era chapter once durable public assets are collected.
-3. Use the new skim/deep reader-mode split to decide whether the next premium layer should be a compact chapter-summary rail, a denser exhibit treatment, or a more explicit entry point into the deep evidence desk.
-4. Consider migrating the static prototype into Astro once the content model stabilizes.
+3. Now that the chapter compass exists, decide whether the next premium layer should deepen the exhibit treatment itself (for example stronger comparative layouts or grouped artifact narratives) or add chapter-specific deep-mode summaries that tee up the evidence desk more explicitly.
+4. Strengthen the source archive further by capturing more direct primary URLs for early academic details, especially anything tighter than the current profile-level CUHK / Beckman trail.
+5. Populate the new media-deck slots with actual preserved captures or conference visuals for the AI-era chapter once durable public assets are collected.
+6. Consider migrating the static prototype into Astro once the content model stabilizes.
