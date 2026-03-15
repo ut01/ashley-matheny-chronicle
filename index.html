@@ -5488,6 +5488,13 @@
       const chapterEls = chapters.map((chapter) => document.getElementById(chapter.id));
       const railLinks = Array.from(document.querySelectorAll('.phase-rail a'));
 
+      railLinks.forEach((link) => {
+        link.addEventListener('click', () => {
+          const chapter = chapters.find((c) => c.id === link.dataset.target);
+          if (chapter) setActiveLocation(chapter.locationId, chapter);
+        });
+      });
+
       const observer = new IntersectionObserver((entries) => {
         const visible = entries
           .filter((entry) => entry.isIntersecting)
