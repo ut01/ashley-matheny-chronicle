@@ -83,10 +83,10 @@
     "mapCaption": "Ph.D. formation at The Chinese University of Hong Kong in Electrical and Electronic Engineering.",
     "mapCamera": {
       "center": [
-        114.1694,
-        22.3193
+        114.2068,
+        22.4196
       ],
-      "zoom": 5.15,
+      "zoom": 10.5,
       "pitch": 34,
       "bearing": 6
     },
@@ -118,10 +118,10 @@
     "mapCaption": "Scientist at the Beckman Laser Institute, UC Irvine — the transition from pure academia toward company-building.",
     "mapCamera": {
       "center": [
-        -118.5,
-        34
+        -117.8443,
+        33.6405
       ],
-      "zoom": 5.45,
+      "zoom": 10.5,
       "pitch": 30,
       "bearing": -18
     },
@@ -158,10 +158,10 @@
     "mapCaption": "Bloombase founded in Redwood City, Silicon Valley.",
     "mapCamera": {
       "center": [
-        -122.05,
-        37.35
+        -122.2364,
+        37.4852
       ],
-      "zoom": 6.1,
+      "zoom": 10.5,
       "pitch": 28,
       "bearing": -22
     },
@@ -207,10 +207,10 @@
     "mapCaption": "Enterprise validation years based in Silicon Valley.",
     "mapCamera": {
       "center": [
-        -121.7,
-        37.45
+        -122.2364,
+        37.4852
       ],
-      "zoom": 5.45,
+      "zoom": 9.0,
       "pitch": 44,
       "bearing": -8
     },
