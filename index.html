@@ -2818,24 +2818,11 @@
           The page follows a calm magazine-like rhythm: thesis first, then chapter navigation, then the main chronology, then a real map, then a selective validation wall, then a denser archive timeline, and finally the source archive. That sequencing keeps the site premium and legible instead of turning into a startup page with a timeline bolted on.
         </p>
       </article>
-      <aside class="card overview-notes">
-        <div class="section-kicker">Design memo translated into implementation</div>
-        <ul>
-          <li>One chronological spine, chapter by chapter.</li>
-          <li>Map movement only when the story changes.</li>
-          <li>Validation grouped by meaning, not dumped as logos.</li>
-          <li>A second archive view for readers who want density, not just curation.</li>
-        </ul>
-      </aside>
+      </article>
     </section>
 
     <section class="ledger-wrap">
       <article class="card ledger-panel">
-        <div class="section-label">Evidence ledger</div>
-        <h2>A chapter dossier for every phase, so deep mode feels curated before the full chronology opens</h2>
-        <p class="ledger-intro">
-          This now behaves like a real chapter dossier layer, not just a scorecard. Each card combines evidence posture, archive density, strongest current anchor, matching exhibit cues, and the next capture target so deep-mode readers can stay oriented before opening the full chronology.
-        </p>
         <div class="ledger-grid" id="chapterLedger"></div>
       </article>
     </section>
@@ -2845,8 +2832,7 @@
 
       <aside class="sticky-stack">
         <section class="card map-panel">
-          <div class="section-label">Geography module</div>
-          <h2 style="font-size:34px; margin-bottom:14px;">A restrained real map, synced to the chapter arc</h2>
+          <div class="section-label">Geography</div>
           <div class="map-shell">
             <div id="map" aria-label="Map showing the geographic arc of Sean Xiang's chronicle"></div>
             <div class="map-overlay"></div>
@@ -2864,8 +2850,7 @@
         </section>
 
         <section class="card validation-panel">
-          <div class="section-label">Validation wall</div>
-          <h2 style="font-size:34px; margin-bottom:14px;">Credibility grouped by ecosystem role</h2>
+          <div class="section-label">Validation ecosystems</div>
           <div class="validation-groups" id="validationGroups"></div>
         </section>
       </aside>
@@ -2873,11 +2858,7 @@
 
     <section class="exhibits-wrap is-deep-section">
       <article class="card exhibits-panel">
-        <div class="section-label">Evidence exhibit</div>
-        <h2>Key source-backed exhibits, grouped like an editorial desk</h2>
-        <p class="exhibit-intro">
-          This layer sits between the curated chapter narrative and the dense archive timeline. It shows which artifacts actually carry the chronicle, why they matter, and how each one should be read: as founding proof, validation cadence, geography evidence, or present-tense AI-era signal.
-        </p>
+        <div class="section-label">Evidence exhibits</div>
         <div class="exhibit-grid" id="exhibitGrid"></div>
       </article>
     </section>
