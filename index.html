@@ -3163,7 +3163,7 @@
 
       function setMode(mode) {
         document.body.dataset.readingMode = mode;
-        summary.textContent = modeCopy[mode] || modeCopy.skim;
+        if (summary) summary.textContent = modeCopy[mode] || modeCopy.skim;
         status.innerHTML = '';
         (modePills[mode] || []).forEach((label) => status.append(make('span', 'reader-mode-pill', label)));
         buttons.forEach((button) => {
