@@ -1,6 +1,6 @@
-# Eric C. Greene Chronicle
+# Sean Xiang Chronicle
 
-An animated research chronicle project for Eric C. Greene, Ph.D. / Columbia University.
+An animated founder chronicle project for Sean Xiang / Bloombase.
 
 Planned structure:
 - research dossier
