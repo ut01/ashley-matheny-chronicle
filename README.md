@@ -24,10 +24,12 @@ I want to adapt this chronicle from Sean Xiang to [NEW SUBJECT NAME].
 [NEW SUBJECT NAME] this should be very clear. You should make sure you are 100% sure about this (because different people can have same names). Otherwise you should ask me clarifying questions.
 
 1. Search for [NEW SUBJECT NAME]'s timeline on LinkedIn and other public records
-2. Replace all Sean Xiang content with [NEW SUBJECT NAME] content
+2. Replace all Sean Xiang content with [NEW SUBJECT NAME] content.
 3. Keep all original styles, layouts, and functionality intact
-4. Update ALL files including index.html, news-index.html, and all data files
-5. Make sure to read and modify every file in the project
+4. Update ALL files including index.html and all data files
+5. Make sure to read and modify every file in the project.
+6. After the modification, you should review at least three times. You can refer to README.md for more information.
+
 
 Please read all files first, then systematically update each one.
 ```
@@ -52,7 +54,6 @@ Then follow the conversion such as the conversion from Sean Xiang to Eric C. Gre
 3. **Update all content files:**
    - Read ALL files in the project, including:
      - `index.html`
-     - `news-index.html`
      - All JSON files in `/data/` directory
      - All markdown files in `/research/` directory
    - Replace subject-specific content while preserving:
@@ -96,7 +97,6 @@ now its not rendering correctly: the website map only show the same place/cannot
 - `/data/` - JSON data files for timeline, locations, artifacts, etc.
 - `/research/` - Markdown research documents and dossiers
 - `index.html` - Main chronicle page
-- `news-index.html` - News/updates index page
 
 ---
 

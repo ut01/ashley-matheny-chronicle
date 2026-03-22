@@ -43,7 +43,7 @@ Open `http://localhost:8000`.
 
 If your PR updates the subject/person content, check all of the following:
 
-- `index.html` and `news-index.html` no longer contain old subject-specific text.
+- `index.html` no longer contains old subject-specific text.
 - All relevant files in `data/` are updated and valid JSON.
 - All relevant files in `research/` are updated.
 - Timeline events render correctly.
