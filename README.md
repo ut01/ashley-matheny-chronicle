@@ -19,12 +19,12 @@ This template can be adapted to create a chronicle for any person. Follow these 
 ### Example Prompt for Your Agent
 
 ```
-I want to adapt this chronicle from Sean Xiang to [NEW SUBJECT NAME].
+I want to adapt this chronicle from Ashley M. Matheny to [NEW SUBJECT NAME].
 
 [NEW SUBJECT NAME] this should be very clear. You should make sure you are 100% sure about this (because different people can have same names). Otherwise you should ask me clarifying questions.
 
 1. Search for [NEW SUBJECT NAME]'s timeline on LinkedIn and other public records
-2. Replace all Sean Xiang content with [NEW SUBJECT NAME] content.
+2. Replace all Ashley M. Matheny content with [NEW SUBJECT NAME] content.
 3. Keep all original styles, layouts, and functionality intact
 4. Update ALL files including index.html and all data files
 5. Make sure to read and modify every file in the project.
@@ -44,7 +44,7 @@ Please read all files first, then systematically update each one.
 
 1. **Create a new branch** from a working commit (e.g., `08f2f2538f089fe85a1f29b9a2cab98615a861f6`)
 
-Then follow the conversion such as the conversion from Sean Xiang to Eric C. Greene in  `89ee2dcde56ca155793af1ccd56bcb518492cd58`.
+Then follow the conversion such as the conversion from Ashley M. Matheny to another subject.
 
 2. **Research your subject:**
    - Search LinkedIn for professional timeline

@@ -1,28 +1,24 @@
 [
   {
-    "id": "shanxi-birth",
-    "phase": "Shanxi",
+    "id": "west-virginia-birth",
+    "phase": "West Virginia",
     "range": "Early years",
-    "title": "Born in Shanxi",
-    "dek": "Sean Xiang was born in Shanxi.",
-    "narrative": [],
+    "title": "Born in West Virginia",
+    "dek": "Ashley Matheny was born in a small town along the Ohio River in West Virginia.",
+    "narrative": [
+      "Growing up along the Ohio River, water skiing, canoeing, and camping meant her passion for nature ran deep. This early connection to water would shape her entire career trajectory."
+    ],
     "proofPoints": [],
-    "locationId": "shanxi-birthplace",
-    "locationIds": ["shanxi-birthplace"],
-    "mapCaption": "Born in Shanxi.",
+    "locationId": "west-virginia-birthplace",
+    "locationIds": ["west-virginia-birthplace"],
+    "mapCaption": "Born in West Virginia along the Ohio River.",
     "mapCamera": {
-      "center": [
-        112.8518,
-        35.4907
-      ],
-      "zoom": 5.0,
+      "center": [-81.6326, 38.3498],
+      "zoom": 6.0,
       "pitch": 18,
       "bearing": -10
     },
-    "sources": [
-      "dossier",
-      "timeline-v2"
-    ],
+    "sources": ["ut-profile", "timeline-v2"],
     "evidenceProfile": {
       "stanceLabel": "Evidence stance",
       "stance": "Restrained narrative",
@@ -33,31 +29,25 @@
     }
   },
   {
-    "id": "hefei-ustc",
-    "phase": "USTC",
-    "range": "1980",
-    "title": "Entering USTC",
-    "dek": "Admitted to USTC in Hefei in 1980, majoring in Physics.",
+    "id": "ohio-state-undergrad",
+    "phase": "Ohio State",
+    "range": "Undergraduate years",
+    "title": "Ohio State University",
+    "dek": "Earned a Bachelor of Science in Civil Engineering from The Ohio State University.",
     "narrative": [
-      "This marked the formal beginning of a highly accelerated academic and technical trajectory, laying a rigorous foundation in the sciences."
+      "As an undergraduate at Ohio State, Matheny immersed herself in measuring water use by trees in a section of Michigan forest under environmental stress. Combining her passions for engineering and nature, this project would evolve into her master's and doctoral research."
     ],
     "proofPoints": [],
-    "locationId": "hefei",
-    "locationIds": ["hefei"],
-    "mapCaption": "Xiang entered USTC in Hefei, Anhui in 1980, majoring in Physics.",
+    "locationId": "columbus-ohio",
+    "locationIds": ["columbus-ohio"],
+    "mapCaption": "Matheny earned her BS in Civil Engineering from Ohio State University.",
     "mapCamera": {
-      "center": [
-        117.2638,
-        31.8390
-      ],
-      "zoom": 5.0,
+      "center": [-83.0007, 40.0067],
+      "zoom": 10.0,
       "pitch": 18,
       "bearing": -10
     },
-    "sources": [
-      "dossier",
-      "timeline-v2"
-    ],
+    "sources": ["ut-profile", "timeline-v2"],
     "evidenceProfile": {
       "stanceLabel": "Evidence stance",
       "stance": "Restrained narrative",
@@ -69,286 +59,240 @@
   },
   {
     "id": "research-formation",
-    "phase": "CUHK",
-    "range": "Graduate era – 1997",
-    "title": "A long research arc before Silicon Valley",
-    "dek": "A Ph.D. in Electrical and Electronic Engineering from CUHK, followed by a Research Associate role at HKUST, preceded everything that followed.",
+    "phase": "Ohio State PhD",
+    "range": "2013–2016",
+    "title": "Doctoral research in ecohydrology",
+    "dek": "A Ph.D. in Civil, Environmental, and Geodetic Engineering from Ohio State, focused on forest transpiration and plant hydrodynamics.",
     "narrative": [
-      "Sean Xiang’s trajectory did not begin with a leap into entrepreneurship, but with a rigorous academic foundation. Earning a Ph.D. in Electrical and Electronic Engineering from The Chinese University of Hong Kong, he established a deep technical baseline.",
-      "After CUHK, a Research Associate role at HKUST (1996–1997) extended his research depth before the move to California. This scientific grounding proved crucial — the later Bloombase architecture proved resilient across multiple computing waves precisely because of this formation period."
+      "Ashley Matheny's trajectory was built on rigorous scientific foundation. Earning a Ph.D. from Ohio State University under advisor Gil Bohrer, she established deep technical expertise in understanding how trees use water.",
+      "Her doctoral work combined field measurements with numerical modeling to answer questions about how disturbances like drought affect vegetation-climate feedbacks. This scientific grounding proved crucial — her research on tree water storage and hydraulic strategies would become foundational to improving climate models."
     ],
-    "proofPoints": [],
-    "locationId": "hong-kong",
-    "locationIds": ["hong-kong"],
-    "mapCaption": "Ph.D. formation at The Chinese University of Hong Kong in Electrical and Electronic Engineering.",
+    "proofPoints": [
+      "2014: Outstanding Student Paper Award from American Geophysical Union.",
+      "2015: Presidential Fellowship from Ohio State University.",
+      "2016: Dissertation on plant hydrodynamic modeling completed."
+    ],
+    "locationId": "columbus-ohio",
+    "locationIds": ["columbus-ohio"],
+    "mapCaption": "Ph.D. formation at The Ohio State University in Civil, Environmental, and Geodetic Engineering.",
     "mapCamera": {
-      "center": [
-        114.2068,
-        22.4196
-      ],
+      "center": [-83.0007, 40.0067],
       "zoom": 10.5,
       "pitch": 34,
       "bearing": 6
     },
-    "sources": [
-      "launch-academy",
-      "timeline-v2"
-    ],
+    "sources": ["ut-profile", "jsg-profile", "timeline-v2"],
     "evidenceProfile": {
       "stanceLabel": "Evidence stance",
       "stance": "Public profile-backed chapter",
       "strengthLabel": "Source mix",
-      "strength": "Third-party connective source plus timeline synthesis",
+      "strength": "University profile plus timeline synthesis",
       "artifactLabel": "Artifact readiness",
       "artifact": "Research formation chapter"
     }
   },
   {
-    "id": "california-transition",
-    "phase": "Beckman",
-    "range": "1997–1999",
-    "title": "Bridging science and technology strategy",
-    "dek": "Scientist at the Beckman Laser Institute & Medical Clinic, UC Irvine, August 1997 to December 1999.",
+    "id": "postdoc-transition",
+    "phase": "Postdoc",
+    "range": "2016–2017",
+    "title": "Postdoctoral research at Ohio State",
+    "dek": "Postdoctoral Research Scientist in Civil, Environmental, and Geodetic Engineering at Ohio State University, August 2016 to August 2017.",
     "narrative": [
-      "The move from Hong Kong to California shifted the geography and the network — from academic formation toward the institutional ecosystems of the American technology sector, setting the stage for the company-building phase that followed."
+      "The postdoctoral year extended her research depth, incorporating detailed tree hydrology data into computer models of water and bioactive element cycling between earth and atmosphere. This work set the stage for her faculty career that followed."
     ],
     "proofPoints": [],
-    "locationId": "irvine",
-    "locationIds": ["irvine"],
-    "mapCaption": "Scientist at the Beckman Laser Institute, UC Irvine — the transition from pure academia toward company-building.",
+    "locationId": "columbus-ohio",
+    "locationIds": ["columbus-ohio"],
+    "mapCaption": "Postdoctoral researcher at Ohio State — deepening expertise before joining UT Austin.",
     "mapCamera": {
-      "center": [
-        -117.8443,
-        33.6405
-      ],
+      "center": [-83.0007, 40.0067],
       "zoom": 10.5,
       "pitch": 30,
       "bearing": -18
     },
-    "sources": [
-      "launch-academy",
-      "dossier"
-    ],
+    "sources": ["ut-profile", "orcid"],
     "evidenceProfile": {
       "stanceLabel": "Evidence stance",
-      "stance": "Bridge chapter with one key public profile anchor",
+      "stance": "Bridge chapter",
       "strengthLabel": "Source mix",
-      "strength": "Third-party profile plus dossier synthesis",
+      "strength": "Profile plus chronology",
       "artifactLabel": "Artifact readiness",
-      "artifact": "California transition chapter"
+      "artifact": "Postdoc transition chapter"
     }
   },
   {
-    "id": "founding-bloombase",
-    "phase": "Bloombase",
-    "range": "2012–present",
-    "title": "Bloombase is the long arc: enterprise data security built for endurance",
-    "dek": "Co-Founder & CEO of Bloombase since January 2012 — a multi-era infrastructure build embedding specialized security within global enterprise systems.",
+    "id": "joining-ut-austin",
+    "phase": "UT Austin",
+    "range": "2017–present",
+    "title": "Building an ecohydrology research program at UT Austin",
+    "dek": "Assistant Professor at the Jackson School of Geosciences since Fall 2017 — establishing a research program focused on vegetation water use and land-atmosphere interactions.",
     "narrative": [
-      "Establishing headquarters in Redwood City placed Bloombase directly within Silicon Valley's infrastructure ecosystem — a strategic alignment with cloud ecosystems, hardware security module vendors, and enterprise buyers who demanded uncompromising platform trust.",
-      "In this highly unforgiving enterprise security market, Bloombase laid the groundwork for decades of architectural relevance."
+      "Joining the University of Texas at Austin placed Matheny within a world-class earth sciences program with access to diverse field sites from temperate forests to arid landscapes to coastal mangroves.",
+      "In the competitive academic research environment, Matheny built a program combining cutting-edge field measurements with innovative modeling approaches to understand how plants influence water and carbon cycles."
     ],
     "proofPoints": [
-      "2013 releases across OpenStack, EMC, and VMware demonstrate early and deep platform integration.",
-      "2012 appearances in the Open Virtualization Alliance show early positioning in cloud security.",
-      "2014 advisory board expansion highlights early strategic organizational growth."
+      "2017: UT Rising STARs Faculty Award recognizes early career promise.",
+      "2020: G. Moses and Carolyn G. Knebel Distinguished Teaching Award.",
+      "Multiple graduate students and postdocs join the lab to study ecohydrology."
     ],
-    "locationId": "redwood-city",
-    "locationIds": ["redwood-city"],
-    "mapCaption": "Bloombase founded in Redwood City, Silicon Valley.",
+    "locationId": "austin-texas",
+    "locationIds": ["austin-texas"],
+    "mapCaption": "Matheny joined UT Austin's Jackson School of Geosciences in Fall 2017.",
     "mapCamera": {
-      "center": [
-        -122.2364,
-        37.4852
-      ],
+      "center": [-97.7431, 30.2672],
       "zoom": 10.5,
       "pitch": 28,
       "bearing": -22
     },
-    "sources": [
-      "ova-2012",
-      "bloombase-about",
-      "bloombase-offices",
-      "slayton-2014",
-      "bloombase-news-index",
-      "openstack-2013",
-      "emc-2013",
-      "vmware-2013",
-      "dossier",
-      "timeline-v2"
-    ],
+    "sources": ["jsg-profile", "ut-profile", "timeline-v2"],
     "evidenceProfile": {
       "stanceLabel": "Evidence stance",
-      "stance": "Company-spine chapter",
+      "stance": "Faculty appointment chapter",
       "strengthLabel": "Source mix",
-      "strength": "Primary company URLs now support a stronger founding and geography layer",
+      "strength": "Primary university URLs support faculty narrative",
       "artifactLabel": "Artifact readiness",
       "artifact": "Source cards ready"
     }
   },
   {
-    "id": "enterprise-validation",
-    "phase": "Expand",
-    "range": "2014–2020",
-    "title": "Validation accumulates through alliances, certifications, and interoperability",
-    "dek": "A dense network of certifications and partnerships established Bloombase as a universally trusted layer in enterprise infrastructure.",
+    "id": "research-expansion",
+    "phase": "Field Sites",
+    "range": "2017–2021",
+    "title": "Expanding research across diverse ecosystems",
+    "dek": "Field campaigns spanning Michigan forests, Texas Hill Country, New Mexico watersheds, and Gulf Coast mangroves.",
     "narrative": [
-      "From 2014 to 2020, Bloombase methodically expanded its interoperability map. Announcements cataloged deep technical integration with Dell, Hitachi, HP ESKM, Thales ASAP, IBM, VMware Cloud on AWS, and Microsoft Azure Marketplace.",
-      "These milestones represent more than a collection of alliances; they show a clear accumulation pattern of trust. Across changing infrastructure regimes, Bloombase consistently positioned itself at the nexus where data security and performance are non-negotiable."
+      "From 2017 to 2021, Matheny methodically expanded her field research footprint. Projects spanned temperate deciduous forests in Michigan, semi-arid juniper-oak systems in central Texas, high-elevation watersheds in New Mexico's Valles Caldera, and coastal mangrove ecosystems along the Texas Gulf Coast.",
+      "These diverse field sites allowed her to test hypotheses about plant water use strategies across climatic gradients, from water-abundant to water-limited environments."
     ],
     "proofPoints": [
-      "2013-2014: Early validation established with OpenStack, EMC, VMware, Dell, and Hitachi.",
-      "2015-2017: Certifications with HP, Thales, Ultra Electronics, HPE, IBM, ATTO, and Huawei deepen custody and storage trust.",
-      "2018-2020: Public cloud scale confirmed through VMware Cloud on AWS and Microsoft Azure Marketplace.",
-      "Hardware security module (HSM) integrations widened aggressively through Marvell, nCipher, and Futurex."
+      "Michigan: Long-term sap flux monitoring in red oak, white pine, and red maple.",
+      "Texas: Semi-arid forest water use in Ashe juniper and live oak.",
+      "New Mexico: Groundwater-surface water interactions in montane watersheds.",
+      "Gulf Coast: Mangrove hydrodynamics and salinity stress responses."
     ],
-    "locationId": "redwood-city",
-    "locationIds": ["redwood-city"],
-    "mapCaption": "Enterprise validation years based in Silicon Valley.",
+    "locationId": "field-sites",
+    "locationIds": ["field-sites"],
+    "mapCaption": "Research sites span diverse North American ecosystems.",
     "mapCamera": {
-      "center": [
-        -122.2364,
-        37.4852
-      ],
-      "zoom": 9.0,
-      "pitch": 44,
-      "bearing": -8
+      "center": [-95.0, 35.0],
+      "zoom": 4.0,
+      "pitch": 20,
+      "bearing": 0
     },
-    "sources": [
-      "openstack-2013",
-      "emc-2013",
-      "vmware-2013",
-      "vmware-2014",
-      "hitachi-2014",
-      "hp-2015",
-      "thales-2015",
-      "hpe-2015",
-      "ibm-2017",
-      "huawei-2017",
-      "vmware-aws-2018",
-      "azure-2019",
-      "marvell-2019",
-      "ncipher-2019",
-      "futurex-2020"
-    ],
+    "sources": ["jsg-profile", "matheny-lab", "publications"],
     "evidenceProfile": {
       "stanceLabel": "Evidence stance",
-      "stance": "Strongest historical chapter",
+      "stance": "Research expansion chapter",
       "strengthLabel": "Source mix",
-      "strength": "Dense first-party alliance and certification trail",
+      "strength": "Lab website and publication record",
       "artifactLabel": "Artifact readiness",
-      "artifact": "Ready for richer document-style artifact cards"
+      "artifact": "Field research documentation"
     }
   },
   {
-    "id": "geographic-expansion",
-    "phase": "Vancouver",
-    "range": "2018 onward",
-    "title": "The geography widens: strategic expansion to Canada",
-    "dek": "Expansion beyond Silicon Valley emphasized global talent, advanced cryptography capability, and strategic ecosystem scale.",
+    "id": "nsf-career",
+    "phase": "NSF CAREER",
+    "range": "2021",
+    "title": "NSF CAREER Award: Understanding biomass hydraulic capacitance",
+    "dek": "Prestigious five-year NSF CAREER grant to develop novel sensors and models for measuring water storage in trees.",
     "narrative": [
-      "Recognizing the increasing global demand for rigorous data protection, Bloombase strategically expanded its operations into Canada. As detailed in a 2018 Launch Academy profile, Vancouver provided a strong talent pool, advanced cryptography resources, and a supportive technology ecosystem.",
-      "This geographic shift marked a transition from a Silicon Valley-centric operation to a mature, international engineering organization structured for scale."
+      "In 2021, Matheny secured a prestigious NSF CAREER Award, providing five years of funding to establish a strong research and educational program. The project focuses on understanding how trees store water in their biomass — acting as 'water towers' that buffer against drought.",
+      "The research creates novel sensors to directly measure water content at different depths within trees, integrating field data with models and NASA satellite products to better predict droughts, tree mortality, and forest fire likelihood."
     ],
     "proofPoints": [
-      "Vancouver office launch captured in 2018 Launch Academy profile."
+      "Five-year NSF funding for sensor development and modeling.",
+      "Collaboration with Pete Marchetto (Conservify) on prototype sensors.",
+      "Field sites in Michigan temperate forests and Texas semi-arid systems.",
+      "Educational component includes immersive field experience videos in English and Spanish."
     ],
-    "locationId": "vancouver",
-    "locationIds": ["vancouver"],
-    "mapCaption": "Bloombase expands to Vancouver for cryptography talent and ecosystem scale.",
+    "locationId": "austin-texas",
+    "locationIds": ["austin-texas"],
+    "mapCaption": "NSF CAREER Award supports research program based at UT Austin.",
     "mapCamera": {
-      "center": [
-        -123.1207,
-        49.2827
-      ],
-      "zoom": 5.25,
+      "center": [-97.7431, 30.2672],
+      "zoom": 9.5,
       "pitch": 32,
       "bearing": 14
     },
-    "sources": [
-      "launch-academy",
-      "timeline-v2"
-    ],
+    "sources": ["nsf-career", "jsg-news", "matheny-lab"],
     "evidenceProfile": {
       "stanceLabel": "Evidence stance",
-      "stance": "Selective expansion chapter",
+      "stance": "Major funding milestone",
       "strengthLabel": "Source mix",
-      "strength": "One strong public expansion profile plus chronology support",
+      "strength": "NSF announcement plus university news",
       "artifactLabel": "Artifact readiness",
-      "artifact": "Geographic expansion chapter"
+      "artifact": "Award documentation ready"
     }
   },
   {
-    "id": "shenzhen-academic",
-    "phase": "Shenzhen",
-    "range": "2018–2023",
-    "title": "Parallel academic chapter: Founding Dean and Institute co-founder in Shenzhen",
-    "dek": "Alongside leading Bloombase, Sean Xiang built an academic track in Shenzhen — Founding Dean of the School of Artificial Intelligence at Shenzhen Technology University, then Chair Professor and Co-founder at the X-Institute of Shenzhen.",
+    "id": "mangrove-research",
+    "phase": "Mangroves",
+    "range": "2020–present",
+    "title": "Exploring halophyte hydrodynamics at the terrestrial-aquatic interface",
+    "dek": "DOE and ARC grants support mangrove ecosystem research in Texas, Australia, Panama, and Abu Dhabi.",
     "narrative": [
-      "Both roles were part-time and ran in parallel with his CEO duties at Bloombase. This parallel academic arc reflects the same technical thesis: that AI-era infrastructure demands deep cryptographic and security foundations."
-    ],
-    "proofPoints": [],
-    "locationId": "shenzhen",
-    "locationIds": ["shenzhen"],
-    "mapCaption": "Shenzhen academic chapter: Founding Dean of AI at SZTech, then X-Institute co-founder.",
-    "mapCamera": {
-      "center": [
-        114.0579,
-        22.5431
-      ],
-      "zoom": 5.5,
-      "pitch": 28,
-      "bearing": 0
-    },
-    "sources": [
-      "dossier"
-    ],
-    "evidenceProfile": {
-      "stanceLabel": "Evidence stance",
-      "stance": "LinkedIn-confirmed institutional roles",
-      "strengthLabel": "Source mix",
-      "strength": "Direct LinkedIn profile data",
-      "artifactLabel": "Artifact readiness",
-      "artifact": "Shenzhen academic chapter"
-    }
-  },
-  {
-    "id": "ai-era",
-    "phase": "AI era",
-    "range": "2023–now",
-    "title": "The current chapter is not nostalgia — it is AI infrastructure",
-    "dek": "Rebuilding enterprise security primitives for the AI-infrastructure era: post-quantum cryptography, NVIDIA accelerators, and a new standards-layer presence.",
-    "narrative": [
-      "In 2023, Bloombase rebuilt data-at-rest encryption to run natively on NVIDIA DPUs and GPUs — a technical argument that security must operate at the accelerator level to avoid becoming a bottleneck in AI data pipelines. At NVIDIA GTC 2024, Sean Xiang served as a panelist on AI-era cyber defense alongside executives from NVIDIA, Qrypt, and Reality Defender; the Bloombase booth demonstrated post-quantum cryptography (PQC) encryption powered by NVIDIA GPU, DPU, and Morpheus AI.",
-      "In 2025, a strategic alliance with Utimaco delivered integrated NIST FIPS 140-2 Level 3 certified HSM key protection and OASIS KMIP-compliant key management for AI-era workloads. Bloombase also joined the PKI Consortium in November 2024, deepening its participation in cryptographic standards infrastructure."
+      "Matheny's team secured grants from the U.S. Department of Energy and Australian Research Council to study how mangrove ecosystems respond to changes in salinity and atmospheric conditions.",
+      "This work extends plant hydraulics models to include osmotic potential — capturing how salt-tolerant plants manage water stress. The research spans four continents, adding vegetation hydraulics and eddy covariance monitoring sites to track mangrove forest responses to climate change."
     ],
     "proofPoints": [
-      "2024: Entrust partnership integrating StoreSafe with nShield Connect HSMs."
+      "DOE and ARC funding for multi-site mangrove research.",
+      "Collaborations with Los Alamos National Lab, Princeton, Khalifa University, and Monash University.",
+      "Field sites in Texas, Australia, Panama, and Abu Dhabi.",
+      "Development of halophyte-capable plant hydraulics models."
     ],
-    "locationId": "global-ai",
-    "locationIds": ["global-ai"],
-    "mapCaption": "Bloombase integrates with NVIDIA, Utimaco, and global cloud infrastructure.",
+    "locationId": "global-mangroves",
+    "locationIds": ["global-mangroves"],
+    "mapCaption": "Mangrove research spans Texas Gulf Coast and international sites.",
     "mapCamera": {
-      "center": [
-        8,
-        24
-      ],
-      "zoom": 1.35,
+      "center": [20, 15],
+      "zoom": 2.0,
       "pitch": 10,
       "bearing": 0
     },
-    "sources": [
-      "nvidia-2023",
-      "utimaco-2025",
-      "dossier"
+    "sources": ["matheny-lab", "doe-project", "publications"],
+    "evidenceProfile": {
+      "stanceLabel": "Evidence stance",
+      "stance": "International collaboration chapter",
+      "strengthLabel": "Source mix",
+      "strength": "Lab website and funding announcements",
+      "artifactLabel": "Artifact readiness",
+      "artifact": "Project documentation"
+    }
+  },
+  {
+    "id": "recognition",
+    "phase": "Recognition",
+    "range": "2022–present",
+    "title": "Recognition for leadership in ecohydrology",
+    "dek": "Outstanding Early Career Award from the American Meteorological Society and continued research impact.",
+    "narrative": [
+      "In 2022, Matheny received the American Meteorological Society's Outstanding Early Career Award in Agricultural and Forest Meteorology for 'leadership and excellence in the study of vegetation hydrodynamics and its role in the surface-atmosphere exchange of water.'",
+      "This recognition, combined with her NSF CAREER Award and distinguished teaching honors, establishes her as a leading voice in understanding how vegetation influences water and carbon cycles in a changing climate."
     ],
+    "proofPoints": [
+      "2022: AMS Outstanding Early Career Award.",
+      "2021: NSF CAREER Award.",
+      "2020: Distinguished Teaching Award from Jackson School.",
+      "2017: UT Rising STARs Faculty Award.",
+      "Extensive publication record in top journals."
+    ],
+    "locationId": "austin-texas",
+    "locationIds": ["austin-texas"],
+    "mapCaption": "Recognition for research excellence based at UT Austin.",
+    "mapCamera": {
+      "center": [-97.7431, 30.2672],
+      "zoom": 10.0,
+      "pitch": 28,
+      "bearing": -10
+    },
+    "sources": ["matheny-lab", "jsg-profile", "awards"],
     "evidenceProfile": {
       "stanceLabel": "Evidence stance",
       "stance": "Present-tense relevance chapter",
       "strengthLabel": "Source mix",
-      "strength": "Direct Bloombase sources with a clear AI-era frame",
+      "strength": "Award announcements and university profiles",
       "artifactLabel": "Artifact readiness",
-      "artifact": "Best candidate for stronger media / announcement treatment"
+      "artifact": "Recognition documentation"
     }
   }
 ]

@@ -1,518 +1,214 @@
 {
   "title": {
     "text": {
-      "headline": "Sean Xiang - Founder Chronicle",
-      "text": "A simple MVP timeline of study, research, company building, partnerships, and AI-era milestones."
+      "headline": "Ashley M. Matheny - Academic Chronicle",
+      "text": "A timeline of education, research, field campaigns, awards, and scientific milestones in ecohydrology."
     }
   },
   "events": [
     {
-      "start_date": {
-        "year": "2012",
-        "month": "12",
-        "day": "12"
-      },
       "text": {
-        "headline": "Open Virtualization Alliance resource",
-        "text": "An external ecosystem resource captures Bloombase in secure virtualization discourse before the stronger 2013 first-party release trail begins."
+        "headline": "Born in West Virginia",
+        "text": "Born in a small town along the Ohio River, where water skiing, canoeing, and camping fostered a deep passion for nature."
       },
-      "sourceIds": [
-        "ova-2012"
-      ],
-      "id": "ova-overview-2012",
-      "chapterId": "founding-bloombase"
-    },
-    {
-      "start_date": {
-        "year": "2013",
-        "month": "2",
-        "day": "18"
-      },
-      "text": {
-        "headline": "OpenStack Community",
-        "text": "Bloombase joins OpenStack, with Sean Xiang publicly framed as co-founder and CEO and cloud-security advocate."
-      },
-      "sourceIds": [
-        "openstack-2013"
-      ],
-      "id": "openstack-community",
-      "chapterId": "founding-bloombase"
-    },
-    {
-      "start_date": {
-        "year": "2013",
-        "month": "5",
-        "day": "8"
-      },
-      "text": {
-        "headline": "EMC Technology Partner Program",
-        "text": "Bloombase announces EMC interoperability across VNX, Atmos, and NetWorker as enterprise validation starts to stack up."
-      },
-      "sourceIds": [
-        "emc-2013"
-      ],
-      "id": "emc-technology-partner",
-      "chapterId": "founding-bloombase"
-    },
-    {
-      "start_date": {
-        "year": "2013",
-        "month": "8",
-        "day": "30"
-      },
-      "text": {
-        "headline": "VMware Technology Alliance",
-        "text": "Bloombase joins VMware's TAP program, making virtualization and cloud trust part of the public company narrative."
-      },
-      "sourceIds": [
-        "vmware-2013"
-      ],
-      "id": "vmware-technology-alliance-2013",
-      "chapterId": "founding-bloombase"
-    },
-    {
-      "start_date": {
-        "year": "2014",
-        "month": "1",
-        "day": "22"
-      },
-      "text": {
-        "headline": "Dell Technology Partner Certification",
-        "text": "Bloombase achieves Dell Technology Partner certification for next-generation data-at-rest encryption security."
-      },
-      "sourceIds": [
-        "vmware-2014"
-      ],
-      "id": "vmware-technology-alliance",
-      "chapterId": "enterprise-validation"
-    },
-    {
-      "start_date": {
-        "year": "2014",
-        "month": "10",
-        "day": "8"
-      },
-      "text": {
-        "headline": "Bloombase adds Gregory W. Slayton to its advisory board",
-        "text": "A direct company release shows the founder chapter maturing into an international-growth and strategic-guidance story, not just a run of product interoperability milestones."
-      },
-      "sourceIds": [
-        "slayton-2014"
-      ],
-      "id": "slayton-advisory-board-2014",
-      "chapterId": "founding-bloombase"
-    },
-    {
-      "start_date": {
-        "year": "2014",
-        "month": "11",
-        "day": "18"
-      },
-      "text": {
-        "headline": "Hitachi Alliance",
-        "text": "Bloombase joins Hitachi Data Systems' Technology Alliance Program."
-      },
-      "sourceIds": [
-        "hitachi-2014"
-      ],
-      "id": "hitachi-alliance",
-      "chapterId": "enterprise-validation"
-    },
-    {
-      "start_date": {
-        "year": "2015",
-        "month": "9",
-        "day": "1"
-      },
-      "text": {
-        "headline": "HP ESKM Interoperability",
-        "text": "StoreSafe certified interoperable with HP Enterprise Secure Key Manager."
-      },
-      "sourceIds": [
-        "hp-2015"
-      ],
-      "id": "hp-eskm-interoperability",
-      "chapterId": "enterprise-validation"
-    },
-    {
-      "start_date": {
-        "year": "2015",
-        "month": "11",
-        "day": "2"
-      },
-      "text": {
-        "headline": "Thales ASAP Alliance",
-        "text": "Bloombase joins Thales ASAP alliance."
-      },
-      "sourceIds": [
-        "thales-2015"
-      ],
-      "id": "thales-asap-alliance",
-      "chapterId": "enterprise-validation"
-    },
-    {
-      "start_date": {
-        "year": "2015",
-        "month": "12",
-        "day": "3"
-      },
-      "text": {
-        "headline": "HPE Helion Ready / ArcSight",
-        "text": "Cloud and security certification milestone."
-      },
-      "sourceIds": [
-        "hpe-2015"
-      ],
-      "id": "hpe-helion-arcsight",
-      "chapterId": "enterprise-validation"
-    },
-    {
-      "start_date": {
-        "year": "2016",
-        "month": "6",
-        "day": "13"
-      },
-      "text": {
-        "headline": "Ultra Electronics AEP Keyper HSM interoperability",
-        "text": "Bloombase expands the trust-layer story with a direct HSM interoperability release focused on hardened key storage and large-scale enterprise security."
-      },
-      "sourceIds": [
-        "ultra-2016"
-      ],
-      "id": "ultra-aep-keyper",
-      "chapterId": "enterprise-validation"
-    },
-    {
-      "start_date": {
-        "year": "2017",
-        "month": "3",
-        "day": "20"
-      },
-      "text": {
-        "headline": "IBM Validation",
-        "text": "StoreSafe receives IBM Ready for Security Intelligence validation."
-      },
-      "sourceIds": [
-        "ibm-2017"
-      ],
-      "id": "ibm-validation",
-      "chapterId": "enterprise-validation"
-    },
-    {
-      "start_date": {
-        "year": "2017",
-        "month": "7",
-        "day": "17"
-      },
-      "text": {
-        "headline": "ATTO interoperability certification",
-        "text": "Bloombase certifies StoreSafe with ATTO storage-networking hardware, extending the validation arc into SAN, NAS, and high-speed connectivity infrastructure."
-      },
-      "sourceIds": [
-        "atto-2017"
-      ],
-      "id": "atto-certification",
-      "chapterId": "enterprise-validation"
-    },
-    {
-      "start_date": {
-        "year": "2017",
-        "month": "8",
-        "day": "1"
-      },
-      "text": {
-        "headline": "Huawei OceanStor V3 interoperability certification",
-        "text": "Bloombase certifies StoreSafe with Huawei OceanStor V3, extending the validation trail into unified storage infrastructure and telecom / MSP deployment contexts."
-      },
-      "sourceIds": [
-        "huawei-2017"
-      ],
-      "id": "huawei-oceanstor-2017",
-      "chapterId": "enterprise-validation"
-    },
-    {
-      "start_date": {
-        "year": "2018",
-        "month": "7",
-        "day": "9"
-      },
-      "text": {
-        "headline": "VMware Cloud on AWS",
-        "text": "StoreSafe for VMware Cloud on AWS announced."
-      },
-      "sourceIds": [
-        "vmware-aws-2018"
-      ],
-      "id": "vmware-cloud-on-aws",
-      "chapterId": "enterprise-validation"
-    },
-    {
-      "start_date": {
-        "year": "2018",
-        "month": "8",
-        "day": "27"
-      },
-      "text": {
-        "headline": "Canada Expansion Story",
-        "text": "Launch Academy / Maple public expansion chapter."
-      },
-      "sourceIds": [
-        "launch-academy"
-      ],
-      "id": "canada-expansion-story",
-      "chapterId": "geographic-expansion"
-    },
-    {
-      "start_date": {
-        "year": "2019",
-        "month": "1",
-        "day": "22"
-      },
-      "text": {
-        "headline": "Azure Marketplace",
-        "text": "Bloombase StoreSafe available in Microsoft Azure Marketplace."
-      },
-      "sourceIds": [
-        "azure-2019"
-      ],
-      "id": "azure-marketplace",
-      "chapterId": "enterprise-validation"
-    },
-    {
-      "start_date": {
-        "year": "2019",
-        "month": "3",
-        "day": "5"
-      },
-      "text": {
-        "headline": "Marvell LiquidSecurity HSM partnership",
-        "text": "A partner-hosted Marvell release extends the 2019 enterprise trust layer into network HSM infrastructure between the Azure and nCipher milestones."
-      },
-      "sourceIds": [
-        "marvell-2019"
-      ],
-      "id": "marvell-liquidsecurity-2019",
-      "chapterId": "enterprise-validation"
-    },
-    {
-      "start_date": {
-        "year": "2019",
-        "month": "10",
-        "day": "21"
-      },
-      "text": {
-        "headline": "nCipher Collaboration",
-        "text": "Cloud data-at-rest protection collaboration."
-      },
-      "sourceIds": [
-        "ncipher-2019"
-      ],
-      "id": "ncipher-collaboration",
-      "chapterId": "enterprise-validation"
-    },
-    {
-      "start_date": {
-        "year": "2020",
-        "month": "2",
-        "day": "18"
-      },
-      "text": {
-        "headline": "Futurex Collaboration",
-        "text": "Security partnership milestone."
-      },
-      "sourceIds": [
-        "futurex-2020"
-      ],
-      "id": "futurex-collaboration",
-      "chapterId": "enterprise-validation"
-    },
-    {
-      "start_date": {
-        "year": "2023"
-      },
-      "text": {
-        "headline": "NVIDIA DPU / GPU Era",
-        "text": "Rebuilding Bloombase data-at-rest security with NVIDIA DPUs and GPUs."
-      },
-      "sourceIds": [
-        "nvidia-2023"
-      ],
-      "id": "nvidia-dpu-gpu-era",
-      "chapterId": "ai-era"
-    },
-    {
-      "start_date": {
-        "year": "2024"
-      },
-      "text": {
-        "headline": "Conference / Ecosystem Visibility",
-        "text": "RSA, GTC, MWC, CYBERSEC and broader public ecosystem presence."
-      },
-      "sourceIds": [
-        "dossier"
-      ],
-      "id": "conference-ecosystem-visibility",
-      "chapterId": "ai-era"
-    },
-    {
-      "start_date": {
-        "year": "2025",
-        "month": "4",
-        "day": "29"
-      },
-      "text": {
-        "headline": "Utimaco Alliance",
-        "text": "Alliance focused on AI-era data security solutions."
-      },
-      "sourceIds": [
-        "utimaco-2025"
-      ],
-      "id": "utimaco-alliance",
-      "chapterId": "ai-era"
-    },
-    {
-      "start_date": {
-        "year": "1980"
-      },
-      "text": {
-        "headline": "Entering USTC",
-        "text": "Entered the University of Science and Technology of China in 1980, majoring in Physics."
-      },
-      "sourceIds": [
-        "dossier",
-        "timeline-v2"
-      ],
-      "id": "entering-ustc",
-      "chapterId": "hefei-ustc",
-      "sortBucket": "formation"
-    },
-    {
-      "text": {
-        "headline": "Born in Shanxi",
-        "text": "Born in Shanxi, marking the beginning of the journey."
-      },
-      "sourceIds": [
-        "dossier",
-        "timeline-v2"
-      ],
-      "id": "born-in-shanxi",
-      "chapterId": "shanxi-birth",
-      "dateLabel": "Undated - opening frame",
+      "sourceIds": ["ut-profile"],
+      "id": "born-west-virginia",
+      "chapterId": "west-virginia-birth",
+      "dateLabel": "Early years",
       "undated": true,
       "sortBucket": "formation"
     },
     {
-      "start_date": {
-        "year": "1996"
-      },
-      "end_date": {
-        "year": "1997"
-      },
       "text": {
-        "headline": "Research Associate, HKUST",
-        "text": "Research Associate at Hong Kong University of Science and Technology, 1996–1997, following the CUHK doctorate."
+        "headline": "Ohio State University - BS Civil Engineering",
+        "text": "Earned Bachelor of Science in Civil Engineering from The Ohio State University, beginning research on tree water use in Michigan forests."
       },
-      "sourceIds": [
-        "dossier"
-      ],
-      "id": "hkust-research-associate",
-      "chapterId": "research-formation",
-      "sortBucket": "research"
-    },
-    {
-      "start_date": {
-        "year": "1997",
-        "month": "8"
-      },
-      "end_date": {
-        "year": "1999",
-        "month": "12"
-      },
-      "text": {
-        "headline": "Scientist, Beckman Laser Institute, UC Irvine",
-        "text": "Scientist at the Beckman Laser Institute & Medical Clinic, UC Irvine, Aug 1997 – Dec 1999."
-      },
-      "sourceIds": [
-        "launch-academy",
-        "dossier"
-      ],
-      "id": "beckman-uc-irvine",
-      "chapterId": "california-transition",
-      "sortBucket": "research"
-    },
-    {
-      "text": {
-        "headline": "CUHK PhD",
-        "text": "Advanced training in Electrical and Electronic Engineering at The Chinese University of Hong Kong."
-      },
-      "sourceIds": [
-        "launch-academy",
-        "dossier"
-      ],
-      "id": "cuhk-phd",
-      "chapterId": "research-formation",
-      "dateLabel": "Undated graduate-era anchor",
+      "sourceIds": ["ut-profile"],
+      "id": "ohio-state-undergrad",
+      "chapterId": "ohio-state-undergrad",
+      "dateLabel": "Undergraduate years",
       "undated": true,
+      "sortBucket": "formation"
+    },
+    {
+      "start_date": {"year": "2010"},
+      "text": {
+        "headline": "U.S. Army Corps of Engineers",
+        "text": "Worked studying water interactions with dams for the U.S. Army Corps of Engineers after completing bachelor's degree."
+      },
+      "sourceIds": ["ut-profile"],
+      "id": "army-corps",
+      "chapterId": "ohio-state-undergrad",
+      "sortBucket": "formation"
+    },
+    {
+      "start_date": {"year": "2010"},
+      "end_date": {"year": "2011"},
+      "text": {
+        "headline": "University Fellowship - Ohio State",
+        "text": "Awarded University Fellowship from Ohio State University."
+      },
+      "sourceIds": ["jsg-profile"],
+      "id": "university-fellowship",
+      "chapterId": "research-formation",
       "sortBucket": "research"
     },
     {
-      "start_date": {
-        "year": "2012",
-        "month": "1"
-      },
+      "start_date": {"year": "2013", "month": "5"},
+      "end_date": {"year": "2016", "month": "8"},
       "text": {
-        "headline": "Bloombase co-founded",
-        "text": "Sean Xiang co-founds Bloombase in January 2012 and begins his tenure as CEO, building toward the 2013 public release trail."
+        "headline": "PhD - Ohio State University",
+        "text": "Doctorate in Civil, Environmental, and Geodetic Engineering from Ohio State University under advisor Gil Bohrer."
       },
-      "sourceIds": [
-        "bloombase-about",
-        "bloombase-offices",
-        "bloombase-news-index",
-        "dossier"
-      ],
-      "id": "bloombase-founded",
-      "chapterId": "founding-bloombase",
-      "sortBucket": "founding"
+      "sourceIds": ["orcid", "ut-profile"],
+      "id": "phd-ohio-state",
+      "chapterId": "research-formation",
+      "sortBucket": "research"
     },
     {
-      "start_date": {
-        "year": "2018",
-        "month": "1"
-      },
-      "end_date": {
-        "year": "2021",
-        "month": "6"
-      },
+      "start_date": {"year": "2014", "month": "12"},
       "text": {
-        "headline": "Founding Dean, School of AI — Shenzhen Technology University",
-        "text": "Distinguished Professor and Founding Dean of the School of Artificial Intelligence at Shenzhen Technology University, January 2018 – June 2021."
+        "headline": "Outstanding Student Paper Award - AGU",
+        "text": "Received Outstanding Student Paper Award from American Geophysical Union Fall Meeting."
       },
-      "sourceIds": [
-        "dossier"
-      ],
-      "id": "sztech-founding-dean",
-      "chapterId": "shenzhen-academic",
-      "sortBucket": "shenzhen"
+      "sourceIds": ["jsg-profile"],
+      "id": "agu-award-2014",
+      "chapterId": "research-formation",
+      "sortBucket": "research"
     },
     {
-      "start_date": {
-        "year": "2021",
-        "month": "6"
-      },
-      "end_date": {
-        "year": "2023",
-        "month": "12"
-      },
+      "start_date": {"year": "2015"},
+      "end_date": {"year": "2016"},
       "text": {
-        "headline": "Chair Professor & Executive President — X-Institute of Shenzhen",
-        "text": "Chair Professor, Co-founder, and Executive President at the X-Institute of Shenzhen, June 2021 – December 2023."
+        "headline": "Presidential Fellowship - Ohio State",
+        "text": "Awarded Presidential Fellowship from Ohio State University."
       },
-      "sourceIds": [
-        "dossier"
-      ],
-      "id": "x-institute-shenzhen",
-      "chapterId": "shenzhen-academic",
-      "sortBucket": "shenzhen"
+      "sourceIds": ["jsg-profile"],
+      "id": "presidential-fellowship",
+      "chapterId": "research-formation",
+      "sortBucket": "research"
+    },
+    {
+      "start_date": {"year": "2016", "month": "8"},
+      "end_date": {"year": "2017", "month": "8"},
+      "text": {
+        "headline": "Postdoctoral Researcher - Ohio State",
+        "text": "Postdoctoral Research Scientist in Civil, Environmental, and Geodetic Engineering at Ohio State University."
+      },
+      "sourceIds": ["orcid", "ut-profile"],
+      "id": "postdoc-ohio-state",
+      "chapterId": "postdoc-transition",
+      "sortBucket": "postdoc"
+    },
+    {
+      "start_date": {"year": "2017", "month": "8"},
+      "text": {
+        "headline": "Joined UT Austin Faculty",
+        "text": "Appointed Assistant Professor in the Department of Geological Sciences at the Jackson School of Geosciences, University of Texas at Austin."
+      },
+      "sourceIds": ["jsg-profile", "ut-profile"],
+      "id": "ut-austin-faculty",
+      "chapterId": "joining-ut-austin",
+      "sortBucket": "faculty"
+    },
+    {
+      "start_date": {"year": "2017"},
+      "text": {
+        "headline": "UT Rising STARs Faculty Award",
+        "text": "Received University of Texas Rising STARs Faculty Award."
+      },
+      "sourceIds": ["jsg-profile"],
+      "id": "rising-stars-2017",
+      "chapterId": "joining-ut-austin",
+      "sortBucket": "faculty"
+    },
+    {
+      "start_date": {"year": "2018"},
+      "text": {
+        "headline": "Michigan Field Site Established",
+        "text": "Continued long-term sap flux and tree water content monitoring at University of Michigan Biological Station."
+      },
+      "sourceIds": ["matheny-lab"],
+      "id": "michigan-field-site",
+      "chapterId": "research-expansion",
+      "sortBucket": "research"
+    },
+    {
+      "start_date": {"year": "2019"},
+      "text": {
+        "headline": "New Mexico Field Campaign",
+        "text": "Led field campaign in Valles Caldera, New Mexico studying groundwater-surface water interactions."
+      },
+      "sourceIds": ["matheny-lab", "publications"],
+      "id": "new-mexico-field",
+      "chapterId": "research-expansion",
+      "sortBucket": "research"
+    },
+    {
+      "start_date": {"year": "2020"},
+      "text": {
+        "headline": "Distinguished Teaching Award",
+        "text": "Received G. Moses and Carolyn G. Knebel Distinguished Teaching Award from Jackson School of Geosciences."
+      },
+      "sourceIds": ["jsg-profile"],
+      "id": "teaching-award-2020",
+      "chapterId": "joining-ut-austin",
+      "sortBucket": "faculty"
+    },
+    {
+      "start_date": {"year": "2020"},
+      "text": {
+        "headline": "DOE Mangrove Research Project",
+        "text": "Awarded U.S. Department of Energy grant to study mangrove ecosystem responses to salinity and climate change."
+      },
+      "sourceIds": ["matheny-lab"],
+      "id": "doe-mangrove",
+      "chapterId": "mangrove-research",
+      "sortBucket": "research"
+    },
+    {
+      "start_date": {"year": "2021"},
+      "text": {
+        "headline": "NSF CAREER Award",
+        "text": "Received prestigious NSF Faculty Early Career Development (CAREER) Award for research on biomass hydraulic capacitance."
+      },
+      "sourceIds": ["nsf-career", "jsg-news"],
+      "id": "nsf-career-2021",
+      "chapterId": "nsf-career",
+      "sortBucket": "awards"
+    },
+    {
+      "start_date": {"year": "2022"},
+      "text": {
+        "headline": "AMS Outstanding Early Career Award",
+        "text": "Received American Meteorological Society's Outstanding Early Career Award in Agricultural and Forest Meteorology."
+      },
+      "sourceIds": ["matheny-lab", "jsg-profile"],
+      "id": "ams-award-2022",
+      "chapterId": "recognition",
+      "sortBucket": "awards"
+    },
+    {
+      "start_date": {"year": "2022"},
+      "text": {
+        "headline": "Texas Global Seed Grant - Jamaica",
+        "text": "Awarded Texas Global Seed Grant with Dr. Rowan Martindale to study mangrove-coral reef interactions in Jamaica."
+      },
+      "sourceIds": ["matheny-lab"],
+      "id": "jamaica-grant",
+      "chapterId": "mangrove-research",
+      "sortBucket": "research"
+    },
+    {
+      "start_date": {"year": "2023"},
+      "text": {
+        "headline": "Continued Research Leadership",
+        "text": "Leading active research program with multiple graduate students and postdocs studying ecohydrology across diverse ecosystems."
+      },
+      "sourceIds": ["jsg-profile", "matheny-lab"],
+      "id": "current-research",
+      "chapterId": "recognition",
+      "sortBucket": "current"
     }
   ]
 }

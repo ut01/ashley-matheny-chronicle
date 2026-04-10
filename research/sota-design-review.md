@@ -1,6 +1,6 @@
-# Sean Xiang Chronicle — SOTA Design Review
+# Ashley M. Matheny Chronicle — SOTA Design Review
 
-Goal: build a premium founder-chronicle page by borrowing proven patterns from open-source timeline, map-story, and editorial storytelling systems instead of inventing a bespoke interaction model too early.
+Goal: build a premium academic-chronicle page by borrowing proven patterns from open-source timeline, map-story, and editorial storytelling systems instead of inventing a bespoke interaction model too early.
 
 ## 1) Top 5 open-source references
 
@@ -18,7 +18,7 @@ Goal: build a premium founder-chronicle page by borrowing proven patterns from o
 - Why it matters:
   - Canonical open-source "map + narrative card" reference.
   - Useful for the life-journey / geography layer: place, caption, image, transition.
-  - Especially relevant because Sean's biography has clear location chapters (China/Hong Kong -> Irvine -> Silicon Valley -> Canada / global ecosystem).
+  - Especially relevant because Ashley's biography has clear location chapters (West Virginia -> Ohio -> Texas -> Global field sites).
 
 ### 3. Odyssey.js
 - Repo: https://github.com/CartoDB/odyssey.js
@@ -83,21 +83,23 @@ Goal: build a premium founder-chronicle page by borrowing proven patterns from o
 - Do not use glossy "toy" sci-fi styling without evidence.
   - The current prototype has energy, but the final version should feel more archival, elegant, and source-backed.
 
-## 3) Recommended information architecture for the Sean Xiang page
+## 3) Recommended information architecture for the Ashley M. Matheny page
 
 ### A. Hero / thesis
 - Name, one-sentence thesis, portrait or restrained abstract visual.
-- Short framing line: early technical prodigy -> research -> enterprise security founder -> AI infrastructure era.
+- Short framing line: West Virginia roots -> Ohio State research -> UT Austin faculty -> NSF CAREER -> Global field research.
 - 3-5 proof chips only, not 10+.
 
 ### B. At-a-glance chronology
 - Compact horizontal phase rail:
   - Early formation
-  - CUHK / PhD
-  - Beckman / UC Irvine
-  - Bloombase founding
-  - Enterprise validation years
-  - AI-era repositioning
+  - Ohio State undergrad
+  - Ohio State PhD
+  - Postdoc
+  - UT Austin faculty
+  - Field research expansion
+  - NSF CAREER
+  - Recognition
 - Clicking a phase jumps to that chapter.
 
 ### C. Main narrative chapters

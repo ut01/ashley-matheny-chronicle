@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sean Xiang — Founder Chronicle</title>
-  <meta name="description" content="A source-backed editorial chronicle of Sean Xiang's path from research to enterprise security founder and AI-era infrastructure builder." />
+  <title>Ashley M. Matheny — Academic Chronicle</title>
+  <parameter name="description" content="A source-backed editorial chronicle of Ashley M. Matheny's path from West Virginia to becoming a leading ecohydrologist at UT Austin." />
   <link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet" />
   <style>
     :root {
@@ -2785,27 +2785,29 @@
   </style>
 </head>
 <body>
-  <a class="repo-side-button left" href="https://github.com/ktwu01/sean-xiang-chronicle/stargazers" target="_blank" rel="noopener noreferrer" aria-label="Star this repository on GitHub">Star repo</a>
-  <a class="repo-side-button right" href="https://github.com/ktwu01/sean-xiang-chronicle/fork" target="_blank" rel="noopener noreferrer" aria-label="Fork this repository on GitHub">Fork repo</a>
+  <a class="repo-side-button left" href="https://github.com/ut01/ashley-matheny-chronicle/stargazers" target="_blank" rel="noopener noreferrer" aria-label="Star this repository on GitHub">Star repo</a>
+  <a class="repo-side-button right" href="https://github.com/ut01/ashley-matheny-chronicle/fork" target="_blank" rel="noopener noreferrer" aria-label="Fork this repository on GitHub">Fork repo</a>
   <main class="shell">
     <div class="topline">
-      <span>Sean Xiang Chronicle</span>
+      <span>Ashley M. Matheny Chronicle</span>
     </div>
 
     <section class="hero">
       <article class="card hero-copy">
-        <div class="eyebrow">Founder chronicle</div>
-        <h1>Sean Xiang</h1>
-        <p class="lede">From doctoral engineering formation to a long enterprise-security build — and now a present-tense case for AI infrastructure.</p>
+        <div class="eyebrow">Academic chronicle</div>
+        <h1>Ashley M. Matheny</h1>
+        <p class="lede">From West Virginia to becoming a leading ecohydrologist — understanding how trees use water in a changing climate.</p>
         <p class="summary">
+          Ashley Matheny's research bridges fundamental plant physiology with large-scale climate modeling. Her work on tree water storage, hydraulic strategies, and vegetation-atmosphere interactions has improved drought prediction and forest management under climate change.</p>
+
           An editorial archive tracing academic research through enterprise validation, anchored by a verifiable timeline, geography, and primary sources.
         </p>
         <div class="chips" id="heroChips">
-          <span class="chip">CUHK Ph.D.</span>
-          <span class="chip">Beckman / UC Irvine</span>
-          <span class="chip">Bloombase</span>
-          <span class="chip">Enterprise security alliances</span>
-          <span class="chip">NVIDIA / AI-era repositioning</span>
+          <span class="chip">Ohio State Ph.D.</span>
+          <span class="chip">Ecohydrology</span>
+          <span class="chip">UT Austin Faculty</span>
+          <span class="chip">NSF CAREER Award</span>
+          <span class="chip">Tree Water Use Research</span>
         </div>
       </article>
 
@@ -2888,7 +2890,7 @@
         <section class="card map-panel">
           <div class="section-label">Geography</div>
           <div class="map-shell">
-            <div id="map" aria-label="Map showing the geographic arc of Sean Xiang's chronicle"></div>
+            <div id="map" aria-label="Map showing the geographic arc of Ashley M. Matheny's chronicle"></div>
             <div class="map-overlay"></div>
             <div class="map-caption">
               <h3 id="mapTitle">Loading…</h3>
@@ -2982,7 +2984,7 @@
     </section>
     <p class="footer-note">
       Koutian Wu et al. - GitHub repository:
-      <a href="https://github.com/ktwu01/sean-xiang-chronicle" target="_blank" rel="noopener noreferrer">https://github.com/ktwu01/sean-xiang-chronicle</a>
+      <a href="https://github.com/ut01/ashley-matheny-chronicle" target="_blank" rel="noopener noreferrer">https://github.com/ut01/ashley-matheny-chronicle</a>
     </p>
   </main>
 
@@ -3018,9 +3020,9 @@
       const root = document.getElementById('heroStats');
       if (!root) return;
       const stats = [
-        ['14 years', 'leading Bloombase as CEO'],
-        ['20+', 'enterprise alliances and certifications'],
-        ['Physics → EE PhD → Security CEO', 'the technical arc']
+        ['7+ years', 'faculty at UT Austin'],
+        ['50+', 'peer-reviewed publications'],
+        ['Civil Engineering → Ecohydrology PhD → Professor', 'the academic arc']
       ];
 
       stats.forEach(([value, text]) => {
@@ -4861,11 +4863,11 @@
 
     function chapterTone(chapter) {
       const blob = `${chapter.id} ${chapter.phase} ${chapter.title}`.toLowerCase();
-      if (blob.includes('early') || blob.includes('formation')) return 'formation';
-      if (blob.includes('research') || blob.includes('cuhk') || blob.includes('california')) return 'research';
-      if (blob.includes('founding') || blob.includes('bloombase')) return 'founder';
-      if (blob.includes('validation') || blob.includes('expansion')) return 'validation';
-      return 'ai-era';
+      if (blob.includes('early') || blob.includes('west virginia') || blob.includes('birth')) return 'formation';
+      if (blob.includes('ohio state') || blob.includes('undergrad') || blob.includes('phd') || blob.includes('postdoc')) return 'research';
+      if (blob.includes('ut austin') || blob.includes('faculty') || blob.includes('joining')) return 'faculty';
+      if (blob.includes('field') || blob.includes('mangrove') || blob.includes('nsf')) return 'research-expansion';
+      return 'recognition';
     }
 
     function renderMapNav(chapters, locationsById, eventsByChapterId, sourcesById) {
@@ -4915,10 +4917,11 @@
 
     function classifyEvent(headline, text) {
       const blob = `${headline} ${text}`.toLowerCase();
-      if (blob.includes('ustc') || blob.includes('technical formation') || blob.includes('age 16')) return 'formation';
-      if (blob.includes('cuhk') || blob.includes('uc irvine') || blob.includes('beckman')) return 'research';
-      if (blob.includes('nvidia') || blob.includes('utimaco') || blob.includes('conference')) return 'ai-era';
-      if (blob.includes('founded') || blob.includes('marketplace') || blob.includes('canada expansion')) return 'company';
+      if (blob.includes('west virginia') || blob.includes('born')) return 'formation';
+      if (blob.includes('ohio state') || blob.includes('phd') || blob.includes('postdoc')) return 'research';
+      if (blob.includes('ut austin') || blob.includes('faculty') || blob.includes('professor')) return 'faculty';
+      if (blob.includes('nsf') || blob.includes('award') || blob.includes('ams')) return 'awards';
+      if (blob.includes('mangrove') || blob.includes('field') || blob.includes('michigan')) return 'field-research';
       return 'validation';
     }
 
